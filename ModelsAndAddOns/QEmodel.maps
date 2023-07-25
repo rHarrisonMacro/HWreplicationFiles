@@ -1,0 +1,61 @@
+METADATA
+Name:          					smallNKmodelWithQE
+Description:   					A small hybrid NK model with QE
+Author:        					Rich                                                                                 
+
+MODEL VARIABLES
+Output gap:					x
+Inflation:					pie	
+One period return on long bond:			ReL
+Policy Rate:					R
+Yield to maturity on long term bond:		Rcal
+QE:						q
+Natural real rate:				rstar
+Change in QE:					Deltaq
+Change in short rate:				DeltaR
+Negative of QE:					minusq
+QE instrument:					qInst
+Policy rate (annualized):			Rann
+Long bond rate (annualized):			RcalAnn
+Natural real rate (annualized):			rstarAnn
+Annual inflation:				pieYoY
+Inflation lag 1:				pieLag1
+Inflation lag 2:				pieLag2
+Short rate instrument:				Rinst
+
+SHOCKS
+Rstar shock:					varepsilon
+
+PARAMETERS
+Discount factor:              		    	beta:		0.9925 
+Interest elasticity of demand:		    	sigma:          1
+Phillips curve slope:				kappa:          0.024
+Inverse Frisch:               		    	psi:            0.11
+Persistence of rstar:                  		rho:           	0.85
+Share of long term debt:                        delta:          0.3 
+Portfolio share adjustment cost:	    	nu:	   	1.25
+Coupon decay rate:				chi:		0.98
+Habit:                        		    	eta:            0.8
+% Parameters for arbitrary policy rules
+Taylor rule response to inflation:          	phipi:          1.5
+Taylor rule response to output gap:         	phix:           0.125
+
+MODEL EQUATIONS
+IS curve: 					x{t} - eta*x{t-1} = x{t+1} - eta*x{t} - sigma*(1/(1+delta)*R{t} + delta/(1+delta)*ReL{t}-pie{t+1}-rstar{t})
+Phillips curve:					pie{t}  = beta*pie{t+1} + kappa*x{t} - kappa*eta/(1+psi*sigma)*x{t-1} 
+Bond arbitrage:					ReL{t} = R{t} - nu*q{t}
+Yield to maturity on long term bond:		Rcal{t} = chi*beta*Rcal{t+1} + (1-chi*beta)*ReL{t}
+Taylor rule:					R{t} = phipi*pie{t} + phix*x{t}
+Change in short rate:				DeltaR{t} = R{t}-R{t-1}
+QE rule: 					q{t} = 0
+Change in QE:					Deltaq{t} = q{t}-q{t-1}
+Negative of QE:					minusq{t} = -q{t}
+Natural real rate:				rstar{t} = rho*rstar{t-1} + varepsilon{t}
+Short rate instrument:				Rinst{t} = R{t}
+QE instrument:					qInst{t} = q{t}
+Policy rate (annualized):			Rann{t} = 4*R{t}
+Long bond rate (annualized):			RcalAnn{t} = chi*beta*RcalAnn{t+1} + (1-chi*beta)*4*ReL{t}
+Natural real rate (annualized):			rstarAnn{t} = 4*rstar{t}
+Annual inflation:				pieYoY{t} = pie{t} + pieLag1{t} + pieLag2{t} + pieLag2{t-1}
+Inflation lag 1:				pieLag1{t} = pie{t-1}
+Inflation lag 2:				pieLag2{t} = pieLag1{t-1}

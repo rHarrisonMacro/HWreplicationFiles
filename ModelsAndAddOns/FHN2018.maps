@@ -1,0 +1,70 @@
+METADATA
+Name: modelForOBCsims
+Description: Small scale DSGE model with monetary and macro-prudential policy from "Concerted efforts? Monetary policy and macro-prudential tools", Bank of England Staff Working Paper 727, 2018
+Author: Richard Harrison
+
+MODEL VARIABLES
+Output gap:					x
+Quarterly inflation:				pie
+Real house price:				q
+Consumption gap:				cgap
+Housing gap:					hgap
+Real debt:					db
+Nominal policy rate:				i
+Multiplier on borrowing constraint (log devn):	mu
+Housing gap shock:				uh
+% Additional variables
+Nominal policy rate (annual):			iAnn
+Aggregate state variable:			S
+
+SHOCKS
+Housing gap shock:				etah
+
+MODEL EQUATIONS
+% Behavioual equations
+Debt limit (1): db{t} = (1-gammad)*( q{t} + (1-xi)*hgap{t}) + gammad*(db{t-1}-pie{t}) 
+
+Phillips curve (2): pie{t} = gamma*x{t} + beta*pie{t+1} 
+
+Euler equation (3): x{t} - xi*cgap{t} = -1/sigma*(i{t}-pie{t+1}) + x{t+1} - xi*cgap{t+1}
+
+Debt evolution (9): db{t} = 1/betas*(S{t-1} - pie{t}) + (1-xi)/bigTheta*hgap{t} + (1-xi)/eta*cgap{t}
+
+% Using composite state variable implies that i does not enter as a lagged variable
+Composite state var (8): S{t} = i{t} + db{t} - betas*(1-xi)/bigTheta*hgap{t}
+
+Saver housing demand (5): q{t} = (1+tauh-betas)/(1+tauh)*(sigmah*xi*hgap{t} + uh{t}) + sigma*x{t} - sigma*xi*cgap{t} + betas/(1+tauh)*(sigma*xi*cgap{t+1} - sigma*x{t+1} + q{t+1})
+
+Borrower housing demand (6): q{t} = (1-gammad)*mutilde*bigTheta/(1-(1-gammad)*mutilde*bigTheta)*mu{t} - (1-(1-gammad)*mutilde*bigTheta- betab)/(1-(1-gammad)*mutilde*bigTheta)*(sigmah*(1-xi)*hgap{t}-uh{t}) + sigma*(1-xi)*cgap{t} + sigma*x{t} + betab/(1-(1-gammad)*mutilde*bigTheta)*(q{t+1} - sigma*(1-xi)*cgap{t+1} - sigma*x{t+1})
+
+Mult on borrowing constraint (7): x{t} + (1-xi)*cgap{t} = x{t+1} + (1-xi)*cgap{t+1} + 1/sigma*pie{t+1} - 1/sigma*betab/(betas*(1-mutilde))*i{t}  - 1/sigma*mutilde/(1-mutilde)*mu{t} + betab*gammad*mutilde/(sigma*(1-mutilde))*mu{t+1}
+
+% Simple policy rule
+Monetary policy rule: i{t} = 1.5*pie{t}
+
+%%%%%%% FORCING PROCESSES
+Housing gap shock: uh{t} = rhoh*uh{t-1} + etah{t}
+
+%%%%%%% REPORTING VARIABLES
+Nominal policy rate (annual):			iAnn{t} = 4*i{t}
+
+PARAMETERS
+Discount factor for savers:			betas:		0.9925
+Interest elasticity of demand:			sigma:		1
+Frisch labour supply elasticity:		phi:		1
+Partial adjustment par for debt constraint:	gammad:		0.7
+SS LTV ratio:					bigTheta:	0.9
+Calvo parameter:				lambdaCalvo:	0.9 
+Discount factor for borrowers:			betab:		0.99
+Fraction of borrowers: 				xi:		0.57
+Debt to GDP ratio:				eta:		1.8 
+Elasticity of housing demand:			sigmah:		25
+
+% SHOCK PARAMETERS
+AR coefficient for housing gap shock:		rhoh:		0.9
+
+STEADY STATES & PARAMETER TRANSFORMATIONS
+NKPC slope: 				gamma:	(1-lambdaCalvo)*(1-beta*lambdaCalvo)*(sigma+phi)/lambdaCalvo
+SS mulplier on borrowing constraint: 	mutilde:  (1 - betab/betas)/(1-betab*gammad)
+Firm discount factor:			beta:	xi*betab + (1-xi)*betas
+Housing tax to deliver efficient SS:	tauh: 1*(betas - mutilde*(1-gammad)*bigTheta-betab)

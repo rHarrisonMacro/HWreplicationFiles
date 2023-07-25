@@ -1,0 +1,43 @@
+METADATA
+Name:          					INK
+Description:   					Inertial New Keynesian model
+Author:        					Richard Harrison                                                                                 
+
+MODEL VARIABLES
+Output gap:					x
+Inflation (quarterly):				pie	
+Policy Rate:					i
+Natural real rate:				rstar
+Policy rate (annualized):			iAnn
+Natural real rate (annualized):			rstarAnn
+Real wage rate:					w
+Marginal rate of substitution:			mrs
+Real wage minus MRS:				wtilde
+Wage inflation (quarterly):			piw
+
+SHOCKS
+Rstar shock:					varepsilon
+
+PARAMETERS
+Discount factor:              		    	beta:		0.995 
+Interest elasticity of demand:		    	sigma:          1
+Calvo pricing probability:			alpha:          0.8725
+Inverse Frisch:               		    	psi:            0.11
+Persistence of rstar:                  		rho:           	0.9 
+Indexation parameter:			    	iota:	    	0.7
+Habit formation parameter:			eta:		0.8
+% Parameters for arbitrary policy rules
+Taylor rule response to inflation:          	phipi:          1.5
+Taylor rule response to output gap:         	phix:           0.125
+
+MODEL EQUATIONS
+IS curve: 					x{t}-eta*x{t-1}  = x{t+1}-eta*x{t} - sigma*(i{t} - pie{t+1} -rstar{t})
+Phillips curve:					pie{t} - iota*pie{t-1} = beta*(pie{t+1}-iota*pie{t}) + (1-alpha*beta)*(1-alpha)/alpha*w{t} 
+Marginal rate of substitution:			mrs{t} = (psi+1/sigma)*x{t} - eta/sigma*x{t-1}
+Labour supply curve:				w{t} = mrs{t}
+Labour supply curve residual:			wtilde{t} = w{t} - mrs{t}
+Wage inflation:					piw{t} = w{t} - w{t-1} + pie{t}
+Taylor rule:					i{t} = phipi*pie{t} + phix*x{t}
+Natural real rate:				rstar{t} = rho*rstar{t-1} + varepsilon{t}
+Policy rate (annualized):			iAnn{t} = 4*i{t}
+Natural real rate (annualized):			rstarAnn{t} = 4*rstar{t}

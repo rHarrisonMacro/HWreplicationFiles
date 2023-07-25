@@ -1,0 +1,1504 @@
+METADATA
+Name:           FRBUS
+Description:    A version of the FRBUS model by Brayton and Levin. Converted from Dynare version supplied in the macro model database.  
+Author:         Richard Harrison
+
+MODEL VARIABLES
+Definition of policy instrument: rInstr
+Definition of change in policy rate: DeltaR
+Persistent core inflation residual: picxfeRes
+Persistent unemployment residual: lurRes
+Policy fixing variable: polFixVar
+Definition of PCE inflation: PCEinflation
+Lag identity for picniaLag: picniaLag
+Lag identity for picniaLag2: picniaLag2
+Definition of annual GDP growth: d4xgdp
+Lag identity for xgdp: xgdpLag
+Lag identity for xgdpLag: xgdpLag2
+Lag identity for xgdpLag2: xgdpLag3
+Defn of inflation: inflation
+%Lag identity for picniaLag: picniaLag
+%Lag identity for picniaLag2: picniaLag2
+MV xgap2  : xgap2 
+MV lur  : lur 
+MV picnia  : picnia 
+MV picxfe  : picxfe 
+MV pigdp  : pigdp 
+MV drffe  : drffe 
+MV ec  : ec 
+MV eco  : eco 
+MV qec  : qec 
+MV ecd  : ecd 
+MV qecd  : qecd 
+MV echsh  : echsh 
+MV ech  : ech 
+MV eh  : eh 
+MV qeh  : qeh 
+MV ecnia  : ecnia 
+MV kcd  : kcd 
+MV kh  : kh 
+MV epdc  : epdc 
+MV qepdc  : qepdc 
+MV epdo  : epdo 
+MV qepdo  : qepdo 
+MV epd  : epd 
+MV eps  : eps 
+MV qeps  : qeps 
+MV ki  : ki 
+MV kpdc  : kpdc 
+MV kpdo  : kpdo 
+MV kps  : kps 
+MV hks  : hks 
+MV ks  : ks 
+MV rpd  : rpd 
+MV rtpdc  : rtpdc 
+MV rtpdo  : rtpdo 
+MV rtps  : rtps 
+MV tapdda  : tapdda 
+MV vpdc  : vpdc 
+MV vpdo  : vpdo 
+MV vps  : vps 
+MV ex  : ex 
+MV emo  : emo 
+MV ceng  : ceng 
+MV emp  : emp 
+MV em  : em 
+MV fcbnr  : fcbnr 
+MV fnicnr  : fnicnr 
+MV fnilnr  : fnilnr 
+MV fynicnr  : fynicnr 
+MV fynilnr  : fynilnr 
+MV rfynic  : rfynic 
+MV rfynil  : rfynil 
+MV xgdp  : xgdp 
+MV xb  : xb 
+MV xg  : xg 
+MV xp  : xp 
+MV efs  : efs 
+MV hmfpt  : hmfpt 
+MV mfpt  : mfpt 
+MV veoa  : veoa 
+MV xgpot  : xgpot 
+MV hgx  : hgx 
+MV empt  : empt 
+MV hgemp  : hgemp 
+MV xgvt  : xgvt 
+MV hgxgv  : hgxgv 
+MV xhhit  : xhhit 
+MV hgxhhi  : hgxhhi 
+MV xgap  : xgap 
+MV xgdpt  : xgdpt 
+MV hggdpt  : hggdpt 
+MV lhp  : lhp 
+MV qlhp  : qlhp 
+MV lww  : lww 
+MV lep  : lep 
+MV leo  : leo 
+MV leh  : leh 
+MV lfpr  : lfpr 
+MV left  : left 
+MV lest  : lest 
+MV leppot  : leppot 
+MV lurnat  : lurnat 
+MV lprdt  : lprdt 
+MV jccanr  : jccanr 
+MV qynidnr  : qynidnr 
+MV rrmet  : rrmet 
+MV tryh  : tryh 
+MV wdnfcnr  : wdnfcnr 
+MV xbnr  : xbnr 
+MV xgdpnr  : xgdpnr 
+MV xgnr  : xgnr 
+MV ycsnr  : ycsnr 
+MV yh  : yh 
+MV yhibnr  : yhibnr 
+MV yhinr  : yhinr 
+MV yhl  : yhl 
+MV yhp  : yhp 
+MV yhpntnr  : yhpntnr 
+MV yht  : yht 
+MV ynicpnr  : ynicpnr 
+MV ynidnr  : ynidnr 
+MV yniish  : yniish 
+MV yniinr  : yniinr 
+MV ynilnr  : ynilnr 
+MV yninr  : yninr 
+MV ypnr  : ypnr 
+MV pcniar  : pcniar 
+MV pxncr  : pxncr 
+MV dlpl  : dlpl 
+MV plr  : plr 
+MV qpcniar  : qpcniar 
+MV qpxncr  : qpxncr 
+MV qplr  : qplr 
+MV qpxpr  : qpxpr 
+MV qpxgr  : qpxgr 
+MV ppdcr  : ppdcr 
+MV poilr  : poilr 
+MV pcengr  : pcengr 
+MV pcer  : pcer 
+MV pcfr  : pcfr 
+MV uces  : uces 
+MV ucfs  : ucfs 
+MV pcxfer  : pcxfer 
+MV pmor  : pmor 
+MV pgdpr  : pgdpr 
+MV plminr  : plminr 
+MV pxbr  : pxbr 
+MV pxgr  : pxgr 
+MV hgpmor  : hgpmor 
+MV pimor  : pimor 
+MV dpxnc  : dpxnc 
+MV dlpxp  : dlpxp 
+MV egfi  : egfi 
+MV egfl  : egfl 
+MV egfo  : egfo 
+MV egsi  : egsi 
+MV egsl  : egsl 
+MV egso  : egso 
+MV egt  : egt 
+MV eg  : eg 
+MV gfdbtnr  : gfdbtnr 
+MV gfintnr  : gfintnr 
+MV gfrecnr  : gfrecnr 
+MV gfexpnr  : gfexpnr 
+MV gfdefnr  : gfdefnr 
+MV gftrd  : gftrd 
+MV gsdbtnr  : gsdbtnr 
+MV gsintnr  : gsintnr 
+MV gsrecnr  : gsrecnr 
+MV gsexpnr  : gsexpnr 
+MV gssrpnr  : gssrpnr 
+MV gstrd  : gstrd 
+MV rgfint  : rgfint 
+MV tfpnr  : tfpnr 
+MV trfci  : trfci 
+MV trfp  : trfp 
+MV trfpt  : trfpt 
+MV trsci  : trsci 
+MV trsib  : trsib 
+MV trsp  : trsp 
+MV trspt  : trspt 
+MV trssi  : trssi 
+MV tspnr  : tspnr 
+MV rfftay  : rfftay 
+MV rffe  : rffe 
+MV rtbe  : rtbe 
+MV rg5e  : rg5e 
+MV rg5p  : rg5p 
+MV rg10e  : rg10e 
+MV rg10p  : rg10p 
+MV rbaae  : rbaae 
+MV rbaap  : rbaap 
+MV rcbe  : rcbe 
+MV rcbp  : rcbp 
+MV rcar  : rcar 
+MV rme  : rme 
+MV req  : req 
+MV reqp  : reqp 
+MV wpsnr  : wpsnr 
+MV rcgain  : rcgain 
+MV wpo  : wpo 
+MV fxgap  : fxgap 
+MV fgdp  : fgdp 
+MV fgdpt  : fgdpt 
+MV fpi10  : fpi10 
+MV fpi10t   : fpi10t  
+MV fpic  : fpic 
+MV frs10  : frs10 
+MV frl10  : frl10 
+MV fpxr  : fpxr 
+MV fpxrr  : fpxrr 
+MV rstar  : rstar 
+MV zeco  : zeco 
+MV zecd  : zecd 
+MV zgapc2  : zgapc2 
+MV zeh  : zeh 
+MV zvpdc  : zvpdc 
+MV zvpdo  : zvpdo 
+MV zvps  : zvps 
+MV zxbc  : zxbc 
+MV zxbo  : zxbo 
+MV zxbs  : zxbs 
+MV zpib5  : zpib5 
+MV zpi5  : zpi5 
+MV zpi10  : zpi10 
+MV zpic30  : zpic30 
+MV zlhp  : zlhp 
+MV zyh  : zyh 
+MV zyhp  : zyhp 
+MV zyht  : zyht 
+MV zynid  : zynid 
+MV zlurc  : zlurc 
+MV zlurl  : zlurl 
+MV zlurnc  : zlurnc 
+MV zpc  : zpc 
+MV zpl  : zpl 
+MV zpnc  : zpnc 
+MV zdivgr  : zdivgr 
+MV zrff5  : zrff5 
+MV zrff10  : zrff10 
+MV zrff30  : zrff30 
+MV zgap05  : zgap05 
+MV zgap10  : zgap10 
+MV zgap30  : zgap30 
+MV ecol1  : ecol1 
+MV ecdl1  : ecdl1 
+MV echshl1  : echshl1 
+MV ehl1  : ehl1 
+MV ehl2  : ehl2 
+MV qehf1  : qehf1 
+MV epdcl1  : epdcl1 
+MV epdcl2  : epdcl2 
+MV epdol1  : epdol1 
+MV epdol2  : epdol2 
+MV qepdol1  : qepdol1 
+MV epsl1  : epsl1 
+MV epsl2  : epsl2 
+MV qepsl1  : qepsl1 
+MV kil1  : kil1 
+MV kil2  : kil2 
+MV kil3  : kil3 
+MV kil4  : kil4 
+MV vpdcf1  : vpdcf1 
+MV vpdof1  : vpdof1 
+MV vpsf1  : vpsf1 
+MV cengl1  : cengl1 
+MV cengl2  : cengl2 
+MV rfyncl1  : rfyncl1 
+MV rfynll1  : rfynll1 
+MV xbf1  : xbf1 
+MV xbl1  : xbl1 
+MV xgl1  : xgl1 
+MV efsl1  : efsl1 
+MV efsl2  : efsl2 
+MV efsl3  : efsl3 
+MV efsl4  : efsl4 
+MV hmfptl1  : hmfptl1 
+MV hgxl1  : hgxl1 
+MV xgdptl1  : xgdptl1 
+MV xgdptl2  : xgdptl2 
+MV hggdpl1 : hggdpl1
+MV hggdpl2  : hggdpl2 
+MV xgap2l1  : xgap2l1 
+MV lhpl1   : lhpl1  
+MV qlhpl1  : qlhpl1 
+MV lurl1  : lurl1 
+MV leppol1  : leppol1 
+MV leppol2  : leppol2 
+MV lurnal1  : lurnal1 
+MV wdnfcl1  : wdnfcl1 
+MV wdnfcl2  : wdnfcl2 
+MV xgdpnl1  : xgdpnl1 
+MV yhibnl1  : yhibnl1 
+MV ynidnl1  : ynidnl1 
+MV ynilnl1  : ynilnl1 
+MV yninrl1  : yninrl1 
+MV picnil1  : picnil1 
+MV picnil2  : picnil2 
+MV picnil3  : picnil3 
+MV dpxncl1  : dpxncl1 
+MV dpxncl2  : dpxncl2 
+MV dlpll1  : dlpll1 
+MV dlpll2  : dlpll2 
+MV poilrl1  : poilrl1 
+MV pcengl1  : pcengl1 
+MV pcerl1  : pcerl1 
+MV pcfrl1  : pcfrl1 
+MV pcfrl2  : pcfrl2 
+MV pcfrl3  : pcfrl3 
+MV ucesl1  : ucesl1 
+MV ucfsl1  : ucfsl1 
+MV picxfl1  : picxfl1 
+MV picxfl2  : picxfl2 
+MV picxfl3  : picxfl3 
+MV pxbrl1  : pxbrl1 
+MV dlpxpl1  : dlpxpl1 
+MV dlpxpl2  : dlpxpl2 
+MV dlpxpl3  : dlpxpl3 
+MV egfil1  : egfil1 
+MV egfil2  : egfil2 
+MV egfll1  : egfll1 
+MV egfll2  : egfll2 
+MV egfol1  : egfol1 
+MV egfol2  : egfol2 
+MV egsil1  : egsil1 
+MV egsil2  : egsil2 
+MV egsll1  : egsll1 
+MV egsll2  : egsll2 
+MV egsol1  : egsol1 
+MV egsol2  : egsol2 
+MV gfdbtl1  : gfdbtl1 
+MV gsdbtl1  : gsdbtl1 
+MV rgfinl1  : rgfinl1 
+MV trfpl1  : trfpl1 
+MV trfptl1  : trfptl1 
+MV trssil1  : trssil1 
+MV rtbel1   : rtbel1  
+MV rg5el1   : rg5el1  
+MV rmel1  : rmel1 
+MV rmel2  : rmel2 
+MV fxgapl1  : fxgapl1 
+MV fgdpl1  : fgdpl1 
+MV fgdpl2  : fgdpl2 
+MV fgdpl3  : fgdpl3 
+MV fgdpl4  : fgdpl4 
+MV fgdpl5  : fgdpl5 
+MV fpi10l1  : fpi10l1 
+MV fpi10l2  : fpi10l2 
+MV fpi10l3  : fpi10l3 
+MV frl10l1  : frl10l1 
+MV fpxrrl1  : fpxrrl1 
+MV lzeco  : lzeco 
+MV lzecd  : lzecd 
+MV lzgapc2  : lzgapc2 
+MV lzeh  : lzeh 
+MV zehf2  : zehf2 
+MV lzvpdc  : lzvpdc 
+MV zvpdcf2  : zvpdcf2 
+MV lzvpdo  : lzvpdo 
+MV zvpdof2  : zvpdof2 
+MV lzvpol1  : lzvpol1 
+MV lzvps  : lzvps 
+MV zvpsf2  : zvpsf2 
+MV lzvpsl1  : lzvpsl1 
+MV lzxbc   : lzxbc  
+MV zxbcf2  : zxbcf2 
+MV lzxbo  : lzxbo 
+MV zxbof2  : zxbof2 
+MV lzxbol1  : lzxbol1 
+MV lzxbs  : lzxbs 
+MV zxbsf2  : zxbsf2 
+MV lzxbsl1  : lzxbsl1 
+MV lzpib5  : lzpib5 
+MV lzlhp  : lzlhp 
+MV lzynid  : lzynid 
+MV lzlurc  : lzlurc 
+MV lzlurl  : lzlurl 
+MV lzlurnc  : lzlurnc 
+MV lzpc  : lzpc 
+MV lzpl  : lzpl 
+MV lzpnc  : lzpnc 
+MV one  : one 
+MV fispol : fispol
+
+SHOCKS
+Shock ceng_ : ceng_ 
+Shock dlpl_ : dlpl_ 
+Shock ecd_ : ecd_ 
+Shock ech_ : ech_ 
+Shock eco_ : eco_ 
+Shock egsi_ : egsi_ 
+Shock egsl_ : egsl_ 
+Shock egso_ : egso_ 
+Shock eh_ : eh_ 
+Shock emo_ : emo_ 
+Shock epdc_ : epdc_ 
+Shock epdo_ : epdo_ 
+Shock eps_ : eps_ 
+Shock ex_ : ex_ 
+Shock fiscal_ : fiscal_ 
+Shock fpi10_      : fpi10_      
+Shock fpxrr_ : fpxrr_ 
+Shock frl10_ : frl10_ 
+Shock fxgap_ : fxgap_ 
+Shock gftrd_ : gftrd_ 
+Shock gstrd_ : gstrd_ 
+Shock hmfpt_ : hmfpt_ 
+Shock ki_ : ki_ 
+Shock lhp_ : lhp_ 
+Shock mfpt_  : mfpt_  
+Shock pcengr_ : pcengr_ 
+Shock pcer_ : pcer_ 
+Shock pcfr_ : pcfr_ 
+Shock pcniar_ : pcniar_ 
+Shock pmor_ : pmor_ 
+Shock poilr_ : poilr_ 
+Shock pxncr_ : pxncr_ 
+Shock rbaap_ : rbaap_ 
+Shock rcar_ : rcar_ 
+Shock rcbp_ : rcbp_ 
+Shock rcgain_: rcgain_
+Shock reqp_ : reqp_ 
+Shock rfynic_ : rfynic_ 
+Shock rfynil_ : rfynil_ 
+Shock rg10p_ : rg10p_ 
+Shock rg5p_  : rg5p_  
+Shock rgfint_ : rgfint_ 
+Shock rme_ : rme_ 
+Shock rtbe_ : rtbe_ 
+Shock trfci_ : trfci_ 
+Shock trfp_ : trfp_ 
+Shock trsci_ : trsci_ 
+Shock trsib_ : trsib_ 
+Shock trsp_ : trsp_ 
+Shock trssi_  : trssi_  
+Shock uces_ : uces_ 
+Shock ucfs_ : ucfs_ 
+Shock wdnfcnr_ : wdnfcnr_ 
+Shock yhibnr_ : yhibnr_ 
+Shock ynidnr_    : ynidnr_    
+Shock yniish_     : yniish_     
+MV egfi_  : egfi_ 
+MV egfl_ : egfl_
+% Adding monetary policy shock
+MP shock: etar
+Shock to natural unemployment rate: etalurnat
+Shock to implement interest rate path in base: etaffrFix
+Shock to persistent unemployment residual: etaLurRes
+Shock to persistent core inflation residual: etaPicxfe
+      
+PARAMETERS
+Parameter 1: fsector :  1
+Parameter 2: datet   :  0 % Flag for timing of information set in RE solution
+% In MMB, datet = 0
+Parameter 3: taxon   :  1 % taxon=1: Tax non-neutralities in place taxon:0: non-neutralities removed (eh,epd)
+Parameter 4: qsector :  1 % Switch for Stochastic Simulations: Ad hoc forecasting equations (usually exog.)
+Parameter 5: gsector :  1 % Switch for Stochastic Simualtions: Ad hoc government forecasting equations (usually exog.)
+Parameter 6: dglprd : 1 % Switch for treatment of productivity growth in government sector
+Parameter 7: rstar1  :  0.95 %
+Parameter 8: trfpt1  :  0.05 % tax rate reaction functions to debt/GDP
+Parameter 9: trfpt2  :  0.50 % tax rate reaction functions to debt/GDP
+Parameter 10: trspt1  :  0.05 % tax rate reaction functions to debt/GDP
+Parameter 11: trspt2  :  0.50 % tax rate reaction functions to debt/GDP
+Parameter 12: tayr1   :  0.85  %     Set to match 2014 FEDS note on FRB/US
+Parameter 13: tayp0   :  0.125  %  Note that this coefficient is applied to each *annualised* qtrly rate in the annual inflation rate so 0.125 corresponds to 0.125*4 = 0.5 on annual inflation
+Parameter 17: tayx0   :  1 
+Parameter 18: tayx1   :       0
+%Parameter 19: zeroadj : 0 
+%Parameter 20: rhozero : 0
+%Parameter 21: lagadj:0
+%Parameter 22: mca:0
+%Parameter 23: mco:0
+Parameter 24: lurb1 :     0.87997794000000000
+Parameter 25: lurb2 :     0.31117806000000000
+Parameter 26: lurb3 :    -0.06414897700000000
+Parameter 27: lurb4 :    -0.15320231000000000
+Parameter 28: ecs1 :     0.72472800000000000
+Parameter 29: ecs2 :     0.15066900000000000
+Parameter 30: ecos1 :     0.79700700000000000
+Parameter 31: ecoa1 :     0.09658366291970000
+Parameter 32: ecoa2 :     0.16567146260700000
+Parameter 33: ecod1 :     0.54061698114000000
+Parameter 34: qecs1 :     1.07403100000000000
+Parameter 35: qecs2 :     0.15977500000000000
+Parameter 36: qecs3 :     0.29365800000000000
+Parameter 37: qecs4 :     5.77367900000000000
+Parameter 38: qecs5 :     0.32485900000000000
+Parameter 39: qecb1 :     0.82223284447400000
+Parameter 40: qecb2 :     0.02744726492880000
+Parameter 41: qecb3 :     0.17776715552600000
+Parameter 42: qecb4 :    -0.52831383004700010
+Parameter 43: qecb5 :     0.03785160449050000
+Parameter 44: ecda1 :     0.17934374348000000
+Parameter 45: ecda2 :    -0.14488268355800000
+Parameter 46: ecdb2 :     1.96861385021000000
+Parameter 47: qecds1 :    15.53093800000000000
+Parameter 48: qecds2 :     0.03651200000000000
+Parameter 49: qecda3 :    -0.65797457059600000
+Parameter 50: echs1 :    10.58128800000000000
+Parameter 51: echa1 :    -0.04189322518140000
+Parameter 52: echa2 :     0.60465997056300000
+Parameter 53: echa3 :     0.00251399113239000
+Parameter 54: eha1 :     0.09320978458430000
+Parameter 55: eha2 :     0.25327096841500000
+Parameter 56: eha3 :     0.23275999948600000
+Parameter 57: ehb2 :    -0.01858143360210000
+Parameter 58: ehb3 :    -0.01025202488966000
+Parameter 59: qehs1 :    86.88568700000000000
+Parameter 60: qehs2 :     0.18190400000000000
+Parameter 61: qeha2 :    -0.27575823838800000
+Parameter 62: ecnias1 :     0.72430200000000000
+Parameter 63: ecnias2 :     0.12455800000000000
+Parameter 64: ecnias3 :     0.15114000000000000
+Parameter 65: kcd1 :     0.92922200000000000
+Parameter 66: kh1 :     0.98935200000000000
+Parameter 67: epdcb1 :     0.05000000000000000
+Parameter 68: epdcb2a :     0.27186586842900000
+Parameter 69: epdcb2b :     0.35821673881200000
+Parameter 70: epdcb3 :     0.30220198578600000
+Parameter 71: qepdcs1 :     3.07231400000000000
+Parameter 72: epdob1 :     0.05000000000000000
+Parameter 73: epdob2a :    -0.01651866085250000
+Parameter 74: epdob2b :     0.17719174122800000
+Parameter 75: epdob3 :     0.37500148337200000
+Parameter 76: qepdos1 :     6.02899300000000000
+Parameter 77: epds1 :     0.59788100000000000
+Parameter 78: epsb1 :     0.02500000000000000
+Parameter 79: epsb2a :     0.24062440268500000
+Parameter 80: epsb2b :     0.16250920002900000
+Parameter 81: epsb3 :     0.55426950201200000
+Parameter 82: qepss1 :    16.04211000000000000
+Parameter 83: kib1 :     0.52534821535152040
+Parameter 84: kib2 :     0.24359511952804890
+Parameter 85: kib3 :     0.23105666512043030
+Parameter 86: kib4 :    -0.12431414744102960
+Parameter 87: kpdcs1 :     0.90090700000000000
+Parameter 88: kpdos1 :     0.96090800000000000
+Parameter 89: kpss1 :     0.98925600000000000
+Parameter 90: hkss1 :     0.19408000000000000
+Parameter 91: hkss2 :     0.35962700000000000
+Parameter 92: hkss3 :     0.38140300000000000
+Parameter 93: rtpdcs1 :     0.02166600000000000
+Parameter 94: rtpdcs2 :    -0.46801500000000000
+Parameter 95: rtpdos1 :     0.04512000000000000
+Parameter 96: rtpdos2 :    -0.46801500000000000
+Parameter 97: rtpss1 :     0.11369800000000000
+Parameter 98: tapdda1 :    -0.01785700000000000
+Parameter 99: exa1 :    -0.10494112578145360
+Parameter 100: exd0 :     2.13717932268070500
+Parameter 101: exd1 :     0.90951689811986520
+Parameter 102: emoa1 :    -0.26712712016987720
+Parameter 103: emod0 :     1.41485636953648900
+Parameter 104: emod1 :     1.29215661261832800
+Parameter 105: emod2 :     0.42680041941100160
+Parameter 106: cenga1 :    -0.24542150515617510
+Parameter 107: cengb1a :     0.70240755106276310
+Parameter 108: cengb1b :     0.73071030490526220
+Parameter 109: cengb2 :     0.02260721843178481
+Parameter 110: cengb3a :    -0.24629590222339240
+Parameter 111: cengb3b :    -0.18682195374457920
+Parameter 112: emps1 :     2.60137500000000000
+Parameter 113: emps2 :    -1.60188500000000000
+Parameter 114: ems1 :     0.91410800000000000
+Parameter 115: ems2 :     0.08860500000000000
+Parameter 116: fcbns1 :    -3.49160700000000000
+Parameter 117: fcbns2 :     4.35484300000000000
+Parameter 118: fcbns2a :     0.92200900000000000
+Parameter 119: fcbns2b :     0.07799100000000000
+Parameter 120: fcbns3 :    -1.10004000000000000
+Parameter 121: fcbns4 :     0.96544300000000010
+Parameter 122: fcbns5 :     0.24817500000000000
+Parameter 123: fnicns1 :     0.97281700000000000
+Parameter 124: fnicns2 :    -0.01477000000000000
+Parameter 125: fnicns3 :     1.00123900000000000
+Parameter 126: fnilns1 :     0.97091500000000000
+Parameter 127: fnilns2 :    -0.01232800000000000
+Parameter 128: fnilns3 :     0.99896500000000000
+Parameter 129: fynicns1 :     0.17468300000000000
+Parameter 130: fynilns1 :     0.23974900000000000
+Parameter 131: rfynica1 :    -0.15244691438846210
+Parameter 132: rfynica2 :     0.15556971510600210
+Parameter 133: rfynica3 :     0.65214382926511630
+Parameter 134: rfynila1 :    -0.24380622977402910
+Parameter 135: rfynila2 :     0.09318731044804289
+Parameter 136: rfynila3 :     0.08245051399975228
+Parameter 137: rfynila4 :     0.03826362037625722
+Parameter 138: rfynila5 :     0.10591076073997820
+Parameter 139: rfynila6 :     0.13293345589883290
+Parameter 140: rfynila7 :     0.26092418096450080
+Parameter 141: rfynila8 :     0.06140865827026788
+Parameter 142: xgdps1 :     0.68801900000000000
+Parameter 143: xgdps2 :     0.04864300000000000
+Parameter 144: xgdps3 :     0.08252700000000000
+Parameter 145: xgdps4 :     0.02889300000000000
+Parameter 146: xgdps5 :     0.59812600000000000
+Parameter 147: xgdps6 :    -0.59402600000000010
+Parameter 148: xgdps7 :     0.10535100000000000
+Parameter 149: xgdps8 :    -0.13953600000000000
+Parameter 150: xgdps9 :     0.06467400000000000
+Parameter 151: xgdps10 :     0.11733800000000000
+Parameter 152: egfs1 :     0.46659400000000000
+Parameter 153: egfs2 :     0.13513400000000000
+Parameter 154: egfs3 :     0.39827200000000000
+Parameter 155: egss1 :     0.20762000000000000
+Parameter 156: egss2 :     0.19392600000000000
+Parameter 157: egss3 :     0.59845400000000000
+Parameter 158: xbs1 :     1.29070600000000000
+Parameter 159: xbs2 :    -0.14600600000000000
+Parameter 160: xbs3 :    -0.14469900000000000
+Parameter 161: xgvs1 :     0.26812800000000000
+Parameter 162: xgs1 :     0.98571400000000000
+Parameter 163: xps1 :     0.66185300000000000
+Parameter 164: xps2 :     0.04674400000000000
+Parameter 165: xps3 :     0.07942500000000000
+Parameter 166: xps4 :     0.02780500000000000
+Parameter 167: xps5 :     0.10138500000000000
+Parameter 168: xps6 :     0.00839300000000000
+Parameter 169: xps7 :     0.02905600000000000
+Parameter 170: xps8 :     0.02189800000000000
+Parameter 171: xps9 :     0.02344000000000000
+Parameter 172: efss1 :     1.00531400000000000
+Parameter 173: efss2 :    -0.77599600000000000
+Parameter 174: efss3 :     0.77067000000000000
+Parameter 175: hmfptrho :     0.93999999999999990
+Parameter 176: veoaa1 :     0.98800000000000000
+Parameter 177: empta1 :     0.10000000000000000
+Parameter 178: hgempa1 :     0.90000000000000000
+Parameter 179: xgvta1 :     0.10000000000000000
+Parameter 180: hgxgva1 :     0.90000000000000000
+Parameter 181: xhhita1 :     0.10000000000000000
+Parameter 182: hgxhhia1 :     0.90000000000000000
+Parameter 183: xgdpts1 :     0.77733000000000000
+Parameter 184: xgdpts2 :    -0.01111500000000000
+Parameter 185: xgdpts3 :     0.00859400000000000
+Parameter 186: xgdpts4 :     0.11310500000000000
+Parameter 187: xgdpts5 :     0.11208700000000000
+Parameter 188: lhpb2 :     0.21565800000000000
+Parameter 189: lhpb3 :     0.17399100000000000
+Parameter 190: lhpb4 :     0.60923900000000000
+Parameter 191: lhpb5 :     0.39076100000000000
+Parameter 192: lhpb6 :    -0.06798899999999999
+Parameter 193: lwwa2 :     0.45995660070444500
+Parameter 194: lwwa3 :     0.35017544283190200
+Parameter 195: leors1 :    20.04675900000000000
+Parameter 196: leors2 :    16.26665500000000000
+Parameter 197: leors3 :     2.50796700000000000
+Parameter 198: leors4 :     0.27213700000000000
+Parameter 199: lehs1 :     1.50191200000000000
+Parameter 200: lehs2 :     0.01052900000000000
+Parameter 201: lfpra1 :     0.25350100000000000
+Parameter 202: lfpra2 :    -0.00035700000000000
+Parameter 203: lefta1 :     0.90000000000000000
+Parameter 204: lesta1 :     0.90000000000000000
+Parameter 205: leppots1 :    -0.01306000000000000
+Parameter 206: leppots2 :    -0.01695000000000000
+Parameter 207: leppots3 :    -0.15566600000000000
+Parameter 208: jccans1 :     0.13602400000000000
+Parameter 209: jccans2 :     0.19787800000000000
+Parameter 210: jccans3 :     0.33572100000000000
+Parameter 211: jccans4 :     0.14835300000000000
+Parameter 212: jccans5 :     0.18202400000000000
+Parameter 213: qynidb2 :     1.00000000000000000
+Parameter 214: qynids1 :    -1.36633900000000000
+Parameter 215: rrmeta1 :     0.90480000000000000
+Parameter 216: tryhs1 :     0.11919800000000000
+Parameter 217: tryhs2 :     0.03075600000000000
+Parameter 218: tryhs3 :    -0.10398900000000000
+Parameter 219: tryhs4 :    -0.04596500000000000
+Parameter 220: yhptns1 :     0.33344000000000000
+Parameter 221: yhptns2 :     0.48582300000000000
+Parameter 222: yhptns3 :     0.18073700000000000
+Parameter 223: wdnfca1 :    -0.04153184313843793
+Parameter 224: wdnfcb1 :     0.16178999656411170
+Parameter 225: wdnfcb2 :     0.31537468081475100
+Parameter 226: wdnfcb3 :     0.00198634617075808
+Parameter 227: wdnfcs1 :    -2.86404600000000000
+Parameter 228: wdnfcs2 :     1.86404600000000000
+Parameter 229: xbns1 :     1.29070600000000000
+Parameter 230: xbns2 :    -0.14600600000000000
+Parameter 231: xbns3 :    -0.14469900000000000
+Parameter 232: xgdpns1 :     1.03951100000000000
+Parameter 233: xgdpns2 :     0.59812600000000000
+Parameter 234: xgdpns3 :    -0.59402600000000010
+Parameter 235: xgdpns4 :    -0.13953600000000000
+Parameter 236: xgdpns5 :     0.02574300000000000
+Parameter 237: xgdpns6 :     0.07019100000000000
+Parameter 238: xgns1 :     0.98571400000000000
+Parameter 239: ycsns1 :     0.69987200000000000
+Parameter 240: ycsns2 :    -0.97099600000000000
+Parameter 241: ycsns3 :    -0.41619000000000000
+Parameter 242: ycsns4 :     0.71631800000000000
+Parameter 243: jccacs1 :     1.43690200000000000
+Parameter 244: jccacs2 :    -0.24135900000000000
+Parameter 245: jccacs3 :    -0.19554299999999990
+Parameter 246: yhs1 :     0.57921900000000000
+Parameter 247: yhs2 :     0.14751600000000000
+Parameter 248: yhs3 :     0.27326500000000000
+Parameter 249: yhibna1 :     1.00000000000003600
+Parameter 250: yhibna3 :     0.05781590372088752
+Parameter 251: yhibna4 :     0.43976145398781750
+Parameter 252: yhibna6 :     0.00203964594842794
+Parameter 253: yhibna7 :     0.04794771504698590
+Parameter 254: yhibna8 :     0.00478661146982463
+Parameter 255: yhins1 :     0.59332200000000000
+Parameter 256: yhins2 :     0.22813600000000000
+Parameter 257: yhins3 :     0.00004300000000000
+Parameter 258: yhins4 :     0.17849900000000000
+Parameter 259: yhls1 :    -1.17677700000000000
+Parameter 260: yhls2 :    -1.14156000000000000
+Parameter 261: yhps1 :     0.93453500000000000
+Parameter 262: yhps2 :     0.06546500000000000
+Parameter 263: yhpntns1 :     3.52589700000000000
+Parameter 264: yhpntns2 :    -4.51690400000000000
+Parameter 265: yhpntns3 :   -17.73142700000000000
+Parameter 266: yhpntns4 :    12.82002000000000000
+Parameter 267: yhpntns5 :    -8.36559600000000000
+Parameter 268: yhpntns6 :    -1.05293800000000000
+Parameter 269: yhpntns7 :    -1.81789200000000000
+Parameter 270: yhpntns8 :    -0.64552400000000000
+Parameter 271: yhts1 :     9.24293800000000100
+Parameter 272: ynicpns1 :     8.81205800000000000
+Parameter 273: ynicpns2 :    -5.74014400000000000
+Parameter 274: ynicpns3 :    -0.64495700000000000
+Parameter 275: ynicpns4 :    -0.73607500000000000
+Parameter 276: ynicpns5 :    -0.73030100000000000
+Parameter 277: ynicpns6 :    -6.86777600000000000
+Parameter 278: ynicpns7 :     0.03941900000000000
+Parameter 279: ynidna1 :     0.04854176156750000
+Parameter 280: ynidna2 :     0.44400097074800000
+Parameter 281: yniina1 :     0.79747139382107790
+Parameter 282: yniina2 :     0.06504200397968549
+Parameter 283: yniina3 :     0.20252860617892220
+Parameter 284: yniina4 :     0.93528053487107640
+Parameter 285: yniina5 :     0.78692469720201120
+Parameter 286: yniins1 :     4.83864600000000000
+Parameter 287: yniins2 :     2.86404600000000000
+Parameter 288: yniins3 :     0.18308900000000000
+Parameter 289: yniins4 :     0.07925900000000000
+Parameter 290: yniins5 :    -0.00379700000000000
+Parameter 291: yniins6 :     0.19852800000000000
+Parameter 292: yniins7 :     0.13360100000000000
+Parameter 293: yniins8 :     0.01975400000000000
+Parameter 294: ynilns1 :     0.83353100000000000
+Parameter 295: ynilns2 :     0.04469000000000000
+Parameter 296: ynilns3 :     0.12177900000000000
+Parameter 297: ynins1 :     1.13274500000000000
+Parameter 298: ynins2 :     0.03914700000000000
+Parameter 299: ynins3 :    -0.03427800000000000
+Parameter 300: ynins4 :    -0.13782500000000000
+Parameter 301: ypns1 :     0.60335900000000000
+Parameter 302: ypns2 :     0.13070700000000000
+Parameter 303: ypns3 :     0.26593400000000000
+Parameter 304: pcniaa1 :     0.05345963250200000
+Parameter 305: pcniaa21 :     0.19089296942400000
+Parameter 306: pcniaa22 :     0.13020188243000000
+Parameter 307: pcniaa23 :     0.08779723489500001
+Parameter 308: pcniaa24 :     0.18975504477200000
+Parameter 309: pcniaa4 :    -0.01439537957800000
+Parameter 310: pcniaa5 :     1.00698383632000000
+Parameter 311: pcniaa6 :     0.38907365960000000
+Parameter 312: pcniaa8 :     0.85406145598700000
+Parameter 313: pcnias1 :     0.04936200000000000
+Parameter 314: pcnias2 :     0.13882200000000000
+Parameter 315: pxnca1 :     0.05609013937800000
+Parameter 316: pxnca21 :     0.33560112810700000
+Parameter 317: pxnca22 :     0.23601350656000000
+Parameter 318: pxnca23 :     0.07411259138400000
+Parameter 319: pxnca4 :    -0.01406663313800000
+Parameter 320: pxnca5 :     0.78678934778300000
+Parameter 321: pxnca6 :     1.35803877798000000
+Parameter 322: pxnca8 :     0.63294484245200000
+Parameter 323: pipla1 :     0.06495028437800000
+Parameter 324: pipla21 :     0.20098403513700000
+Parameter 325: pipla22 :     0.24002339229900000
+Parameter 326: pipla23 :     0.15628289361100000
+Parameter 327: pipla4 :    -0.01434662855500000
+Parameter 328: pipla6 :     0.82504538883400000
+Parameter 329: pipla7 :     0.15307031699000000
+Parameter 330: dlpls1 :     0.07273100000000000
+Parameter 331: dlpls2 :     0.20016100000000000
+Parameter 332: tsiens1 :     8.06539800000000000
+Parameter 333: qpcnias1 :     0.18656000000000000
+Parameter 334: uqpca2 :    -0.53567007410000000
+Parameter 335: qpxnca1 :     2.98507462687000000
+Parameter 336: qpxnca2 :    -1.98507462687000000
+Parameter 337: qpxps1 :     0.74786800000000000
+Parameter 338: poilra1 :    -0.19931742478769890
+Parameter 339: poilrb1 :     0.36606340553734860
+Parameter 340: pcengrb1 :    -0.05265757387586706
+Parameter 341: pcengrb2 :    -0.02591203086750279
+Parameter 342: pcengrb3 :     0.02958683282242650
+Parameter 343: pcengrb4 :     0.75614666793982940
+Parameter 344: pcera1 :    -0.11054933532390130
+Parameter 345: pcera2 :     0.04306306304073697
+Parameter 346: pcerb1 :     0.13453388478857130
+Parameter 347: pcerb2 :     0.20729166053040690
+Parameter 348: pcerb3 :     0.04371777025197865
+Parameter 349: pcfra1 :    -0.16688185405526880
+Parameter 350: pcfrb11 :     0.41520648000181230
+Parameter 351: pcfrb12 :    -0.00824831453140233
+Parameter 352: pcfrb13 :     0.40917924877889530
+Parameter 353: ucesa1 :    -0.48384684805145880
+Parameter 354: ucesa2 :     0.41995735880580240
+Parameter 355: ucesa3 :     0.24277664936872510
+Parameter 356: ucesb1 :    -0.04354515853187443
+Parameter 357: ucesb2 :     0.76646901217701860
+Parameter 358: ucesb3 :     0.26847039509614130
+Parameter 359: ucfsa1 :    -0.10152120411058390
+Parameter 360: ucfsa2 :     0.06943223210796481
+Parameter 361: ucfsb1 :     0.00563710195204836
+Parameter 362: ucfsb3 :     0.37434306786105860
+Parameter 363: pmoa1 :     0.43912200000000000
+Parameter 364: pmoa2 :     0.30691300000000000
+Parameter 365: pmoa3 :     0.69308700000000000
+Parameter 366: hgpmora1 :     0.90000000000000000
+Parameter 367: pimors1 :     0.12345600000000000
+Parameter 368: egfia1 :    -0.18394330238045290
+Parameter 369: egfia2a :    -0.24680170860429420
+Parameter 370: egfia2b :    -0.17820833976183210
+Parameter 371: egfia3 :     2.01129676230384100
+Parameter 372: egfia4a :     0.01046625988566389
+Parameter 373: egfia4b :    -0.00824285257827215
+Parameter 374: egfla1 :    -0.07986102297274635
+Parameter 375: egfla2a :     0.25758086510406960
+Parameter 376: egfla2b :    -0.10115236614004040
+Parameter 377: egfla3 :     1.33960527247441100
+Parameter 378: egfla4a :    -0.00049941403603505
+Parameter 379: egfla4b :     0.00070796792063541
+Parameter 380: egfoa1 :    -0.17144831350528240
+Parameter 381: egfoa2a :    -0.23549871893128250
+Parameter 382: egfoa2b :    -0.10695124365892500
+Parameter 383: egfoa3 :     1.78020075416061700
+Parameter 384: egfoa4a :    -0.00038516765044011
+Parameter 385: egfoa4b :     0.00117488981088158
+Parameter 386: egsia1 :    -0.20316532027428990
+Parameter 387: egsia2a :     0.03363569843997749
+Parameter 388: egsia2b :    -0.10711876241400460
+Parameter 389: egsia3 :     1.48498254405308900
+Parameter 390: egsia4a :     0.00767889395960698
+Parameter 391: egsia4b :    -0.00538194005479192
+Parameter 392: egsla1 :    -0.12505734167481360
+Parameter 393: egsla2a :     0.15110849292099590
+Parameter 394: egsla2b :    -0.02057494855531095
+Parameter 395: egsla3 :     0.66081178813101190
+Parameter 396: egsla4a :    -0.00070396094438263
+Parameter 397: egsla4b :     0.00112583020388717
+Parameter 398: egsoa1 :    -0.08128878632774075
+Parameter 399: egsoa2a :     0.52242478077076290
+Parameter 400: egsoa2b :     0.18029049832237940
+Parameter 401: egsoa3 :     0.30958319493669360
+Parameter 402: egsoa4a :    -0.00136019325294800
+Parameter 403: egsoa4b :     0.00139634568679049
+Parameter 404: egta1 :    -0.10000000000000000
+Parameter 405: egs1 :     0.35502900000000000
+Parameter 406: egs2 :     0.64497100000000000
+Parameter 407: gfdbtns2 :     0.12866400000000000
+Parameter 408: gfdbtns3 :    -0.12194800000000000
+Parameter 409: gfdbtns4 :     0.00568600000000000
+Parameter 410: gfdbtns5 :    -0.00581600000000000
+Parameter 411: gfdbtns1 :     0.99341400000000010
+Parameter 412: gfintns1 :    16.04946300000000000
+Parameter 413: gfrecns1 :     0.46260700000000000
+Parameter 414: gfrecns2 :     0.11455000000000000
+Parameter 415: gfrecns3 :     0.04683000000000000
+Parameter 416: gfrecns4 :     0.37601300000000000
+Parameter 417: trfcis1 :     4.49050800000000000
+Parameter 418: gfexpns1 :     0.13101000000000000
+Parameter 419: gfexpns2 :     0.15369300000000000
+Parameter 420: gfexpns3 :     0.42844700000000000
+Parameter 421: gfexpns4 :     0.12735300000000000
+Parameter 422: gfexpns5 :     0.02239300000000000
+Parameter 423: gfexpns6 :     0.13710400000000010
+Parameter 424: gfptns1 :    11.75350600000000000
+Parameter 425: gfdefns1 :     9.10059300000000000
+Parameter 426: gftrda1 :     0.63905428450608790
+Parameter 427: gftrda2 :    -0.00021061937132746
+Parameter 428: gsdbtns2 :     0.22216600000000000
+Parameter 429: gsdbtns3 :    -0.22637900000000000
+Parameter 430: gsdbtns4 :     0.04333500000000000
+Parameter 431: gsdbtns5 :    -0.02175100000000000
+Parameter 432: gsdbtns1 :     0.98262900000000000
+Parameter 433: gsintns1 :     8.01736400000000100
+Parameter 434: gsrecns1 :     0.18761800000000000
+Parameter 435: gsrecns2 :     0.03139000000000000
+Parameter 436: gsrecns3 :     0.54262000000000000
+Parameter 437: gsrecns4 :     0.01253400000000000
+Parameter 438: gsrecns5 :     0.22583799999999990
+Parameter 439: trscis1 :    25.31811800000000000
+Parameter 440: trsibs1 :    10.65960900000000000
+Parameter 441: trssis1 :   404.76472300000000000
+Parameter 442: gsexpns2 :     0.20596300000000000
+Parameter 443: gsexpns3 :     0.20223100000000000
+Parameter 444: gsexpns4 :     0.00865000000000000
+Parameter 445: gsexpns5 :     0.00288500000000000
+Parameter 446: gsexpns1 :     0.58027100000000000
+Parameter 447: gsptns1 :    40.29360300000000000
+Parameter 448: gssrpns1 :    20.70475300000000000
+Parameter 449: gstrda1 :     0.74926798279551620
+Parameter 450: gstrda2 :    -0.00003881189014207
+Parameter 451: rgfinta1 :     0.04424422209453022
+Parameter 452: rgfinta2 :     0.06204177367387913
+Parameter 453: rgfintb1 :    -0.17133869041964870
+Parameter 454: rgfintb2 :     0.19987202525810740
+Parameter 455: rgfintb3 :     0.04423541135296243
+Parameter 456: tfpns1 :     1.14578300000000000
+Parameter 457: tfpns2 :    -0.11459800000000000
+Parameter 458: tfpns3 :    -0.03118500000000000
+Parameter 459: tfpns4 :     8.63565000000000000
+Parameter 460: trfcia1 :     0.71407249944833140
+Parameter 461: trfcia4 :     0.00172820870546111
+Parameter 462: trfcia5 :     0.00382589778662357
+Parameter 463: trfpa21 :     0.56817223354206310
+Parameter 464: trfpa22 :     0.34942685988922830
+Parameter 465: trfpa3 :     0.00034427536674426
+Parameter 466: trscia1 :     0.75946029100417440
+Parameter 467: trscia31 :    -0.00062346124814265
+Parameter 468: trscia32 :     0.00055480299350093
+Parameter 469: trscia4 :     0.12357749586377120
+Parameter 470: trsiba1 :     0.91371152109125410
+Parameter 471: trsiba3 :    -0.00004236235627602
+Parameter 472: trspa1 :     0.62131574157998890
+Parameter 473: trspa21 :     0.91979333369980030
+Parameter 474: trspa22 :    -0.54110907528479400
+Parameter 475: trspa3 :     0.00000670961673159
+Parameter 476: trspa4 :     0.02523637603295423
+Parameter 477: trssia11 :     1.12142509967081700
+Parameter 478: trssia12 :    -0.18529742056667950
+Parameter 479: trssia3 :    -0.00000279390504096
+Parameter 480: tspns1 :     1.14578300000000000
+Parameter 481: tspns2 :    -0.11459800000000000
+Parameter 482: tspns3 :    -0.03118500000000000
+Parameter 483: tspns4 :    33.04425500000000000
+Parameter 484: rtbeb11 :     0.75934130984098370
+Parameter 485: rtbeb12 :     0.12609272581749860
+Parameter 486: rtbeb21 :     0.78269426723110300
+Parameter 487: rtbeb22 :    -0.66812830288956260
+Parameter 488: rg5pa1 :    -0.32277000000000000
+Parameter 489: rg5pa2 :     0.86383000000000000
+Parameter 490: rg10pa1 :    -0.55387000000000000
+Parameter 491: rg10pa2 :     0.85364000000000000
+Parameter 492: rbaapa1 :    -0.61186000000000000
+Parameter 493: rbaapa2 :     0.90088000000000000
+Parameter 494: rcbpa1 :    -0.94450000000000000
+Parameter 495: rcbpa2 :     0.82646000000000000
+Parameter 496: rcara3 :     0.62933284517933360
+Parameter 497: rcara41 :     0.22492622732911550
+Parameter 498: rcara42 :     0.14574092749152240
+Parameter 499: rmea1 :     0.76720028583715290
+Parameter 500: rmea21 :     0.97258818579414850
+Parameter 501: rmea22 :    -0.73978847163100300
+Parameter 502: rmea3 :    -0.06825682782284648
+Parameter 503: reqpb1 :     0.93427108611037020
+Parameter 504: wpsns1 :     0.25176300000000000
+Parameter 505: rcgaina1 :     0.41802403831786060
+Parameter 506: rcgaina2 :     0.58197596168213880
+Parameter 507: rcgaina5 :     0.16255919025238090
+Parameter 508: wpos2 :     0.06870700000000000
+Parameter 509: wpos3 :    -0.06437400000000000
+Parameter 510: wpos4 :    -0.00177800000000000
+Parameter 511: wpos5 :     0.00802300000000000
+Parameter 512: wpos6 :    -0.00632100000000000
+Parameter 513: wpos7 :     0.00250200000000000
+Parameter 514: wpos1 :     0.99574300000000000
+Parameter 515: ydns1 :     1.14745500000000000
+Parameter 516: ydns2 :    -0.11804900000000000
+Parameter 517: ydns3 :    -0.03039800000000000
+Parameter 518: fxgapb1a :     1.18791873322402700
+Parameter 519: fxgapb1b :    -0.36028137863804400
+Parameter 520: fxgapb2 :    -0.07043152293092064
+Parameter 521: fxgapb3 :     0.03625296278160418
+Parameter 522: fxgapb4 :     0.00000000000000000
+Parameter 523: fgdpta1 :    -0.10000000000000000
+Parameter 524: fpi10b2 :     0.32062602000000000
+Parameter 525: fpi10b3a :     0.38869524000000000
+Parameter 526: fpi10b3b :     5.14967970000000000
+Parameter 527: fpi10tb1 :     0.95000000000000000
+Parameter 528: fpi10tb2 :     0.05000000000000000
+Parameter 529: fpicb1 :     0.65858227904952550
+Parameter 530: fpicb2 :     0.34141772095047420
+Parameter 531: frs10b1 :     1.00000000000000000
+Parameter 532: frs10b2 :     1.00000000000000000
+Parameter 533: frs10b3 :     0.50000000000000000
+Parameter 534: frs10b4 :     1.00000000000000000
+Parameter 535: frl10b1 :    -0.08230000000000000
+Parameter 536: frl10b2 :     0.16091000000000000
+Parameter 537: frl10b3 :     0.40743000000000000
+Parameter 538: frl10b4 :     0.21512000000000000
+Parameter 539: fpxrb1 :     0.06000000000000003
+Parameter 540: fpxrb2 :     0.19999999999999850
+Parameter 541: fpxrs1 :     0.61697700000000000
+Parameter 542: fpxrs2 :    -0.73609500000000010
+Parameter 543: fprho :     0.00000000000000000
+Parameter 544: fpxrrb1 :     0.18293566655131470
+Parameter 545: fpxrrb2 :     0.07323158412381960
+Parameter 546: zfecoa1 :     0.09423738003239999
+Parameter 547: zfecoa2 :    -0.01468293965926700
+Parameter 548: zfecoa6 :     1.04663514379776800
+Parameter 549: zfecoa7 :    -0.15580802070493000
+Parameter 581: zfecda1 :     0.17942469395300000
+Parameter 582: zfecda2 :     0.02512800035771100
+Parameter 583: zfecda6 :     0.66125807091722000
+Parameter 584: zfecda7 :     0.14004761442866300
+Parameter 616: zfgapc2a1 :     0.03565066659701600
+Parameter 617: zfgapc2a6 :     0.66125807091722000
+Parameter 618: zfgapc2a7 :     0.14004761442866300
+Parameter 633: zfeha1 :     0.09373761037809999
+Parameter 634: zfeha2 :    -0.02234683784639400
+Parameter 635: zfeha3 :    -0.02054297025152100
+Parameter 636: zfeha6 :     1.13596398491524200
+Parameter 637: zfeha7 :    -0.01924379752798400
+Parameter 638: zfeha8 :    -0.21915397852215800
+Parameter 670: zfvpdc1 :     0.05000000000000000
+Parameter 671: zfvpdc2 :    -0.01271096764600600
+Parameter 672: zfvpdc3 :    -0.01685753644179700
+Parameter 673: zfvpdc6 :     1.19742855106042000
+Parameter 674: zfvpdc7 :     0.08293137591583299
+Parameter 675: zfvpdc8 :    -0.33715072883594400
+Parameter 698: zfvpdo1 :     0.05000000000000000
+Parameter 699: zfvpdo2 :     0.00096340104241200
+Parameter 700: zfvpdo3 :    -0.00833857246549300
+Parameter 701: zfvpdo6 :     0.91481171236454990
+Parameter 702: zfvpdo7 :     0.18603947015811200
+Parameter 703: zfvpdo8 :    -0.16677144930986400
+Parameter 726: zfvps1 :     0.02500000000000000
+Parameter 727: zfvps2 :    -0.00569935499061300
+Parameter 728: zfvps3 :    -0.00382380897484200
+Parameter 729: zfvps6 :     1.19131191463130000
+Parameter 730: zfvps7 :    -0.07502184063082200
+Parameter 731: zfvps8 :    -0.15295235899369500
+Parameter 754: zfxbc1 :     0.05000000000000000
+Parameter 755: zfxbc2 :    -0.01271096764600600
+Parameter 756: zfxbc3 :    -0.01685753644179700
+Parameter 757: zfxbc6 :     1.19742855106042000
+Parameter 758: zfxbc7 :     0.08293137591583299
+Parameter 759: zfxbc8 :    -0.33715072883594400
+Parameter 783: zfxbo1 :     0.05000000000000000
+Parameter 784: zfxbo2 :     0.00096340104241200
+Parameter 785: zfxbo3 :    -0.00833857246549300
+Parameter 786: zfxbo6 :     0.91481171236454990
+Parameter 787: zfxbo7 :     0.18603947015811200
+Parameter 788: zfxbo8 :    -0.16677144930986400
+Parameter 808: zfxbs1 :     0.02500000000000000
+Parameter 809: zfxbs2 :    -0.00569935499061300
+Parameter 810: zfxbs3 :    -0.00382380897484200
+Parameter 811: zfxbs6 :     1.19131191463130000
+Parameter 812: zfxbs7 :    -0.07502184063082200
+Parameter 813: zfxbs8 :    -0.15295235899369500
+Parameter 833: zfpib5a1 :     0.05882353000000000
+Parameter 834: zfpib5a6 :     0.94117647000000000
+Parameter 853: zfpi5a1 :     0.05882353000000000
+Parameter 854: zfpi5a6 :     0.94117647000000000
+Parameter 869: zfpi10a1 :     0.03448275800000000
+Parameter 870: zfpi10a6 :     0.96551724200000000
+Parameter 885: zfpic30a1 :     0.02439024400000000
+Parameter 886: zfpic30a6 :     0.97560975600000000
+Parameter 901: zflhpa1 :     0.21565800000000000
+Parameter 902: zflhpa2 :    -0.03603665805531100
+Parameter 903: zflhpa6 :     0.93916634000000000
+Parameter 904: zflhpa7 :    -0.16710095640000000
+Parameter 921: zfynida1 :     0.04854176156750000
+Parameter 922: zfynida2 :    -0.02069910672318000
+Parameter 923: zfynida6 :     1.36755002499689000
+Parameter 924: zfynida7 :    -0.42641853230637900
+Parameter 944: zflurca1 :     0.00326076272320900
+Parameter 945: zflurca6 :     0.93900514143851230
+Parameter 979: zflurla1 :     0.00468679810814500
+Parameter 980: zflurla6 :     0.92784022190159510
+Parameter 1014: zflurnca1 :     0.00350350921202600
+Parameter 1015: zflurnca6 :     0.93753787651665910
+Parameter 1049: zfpca1 :     0.02448046144615500
+Parameter 1050: zfpca6 :     0.93900514143851230
+Parameter 1084: zfpla1 :     0.02905944107132800
+Parameter 1085: zfpla6 :     0.92784022190159510
+Parameter 1119: zfpnca1 :     0.02212862975317600
+Parameter 1120: zfpnca6 :     0.93753787651665910
+Parameter 1154: zfdivgra1 :     0.02439024300000000
+Parameter 1155: zfdivgra6 :     0.97560975700000000
+Parameter 1175: zfrff5a1 :     0.05882353000000000
+Parameter 1176: zfrff5a6 :     0.94117647000000000
+Parameter 1191: zfrff10a1 :     0.03448275800000000
+Parameter 1192: zfrff10a6 :     0.96551724200000000
+Parameter 1207: zfrff30a1 :     0.02439024400000000
+Parameter 1208: zfrff30a6 :     0.97560975600000000
+Parameter 1223: zfgap05a1 :     0.05882353000000000
+Parameter 1224: zfgap05a6 :     0.94117647000000000
+Parameter 1239: zfgap10a1 :     0.03448275800000000
+Parameter 1240: zfgap10a6 :     0.96551724200000000
+Parameter 1255: zfgap30a1 :     0.02439024300000000
+Parameter 1256: zfgap30a6 :     0.97560975700000000
+Parameter 1271: zfyha1 :     0.75000000000000000
+Parameter 1272: zfyha2 :     1.00752819544453400
+Parameter 1291: zfyhta1 :     0.75000000000000000
+Parameter 1292: zfyhta2 :     1.00752819544453400
+Parameter 1315: zfyhpa1 :     0.75000000000000000
+Parameter 1316: zfyhpa2 :     1.00752819544453400
+Inflation target: infTar: 2 
+Steady state Fed funds rate: FFRbar: 4 
+Trend GDP growth rate: trendGrowth: 2.4 
+Natural unemployment rate: ustar: 5.5 
+
+STEADY STATES & PARAMETER TRANSFORMATIONS
+Parameter 14: tayp1   :       tayp0
+Parameter 15: tayp2   :       tayp0
+Parameter 16: tayp3   :       tayp0
+SS 1:		coffispol : 1/xgdps9
+
+MEASUREMENT EQUATIONS
+Annual PCE inflation mment eqn: annualPCEinf{t} = PCEinflation{t} + infTar
+Annual core PCE inflation mment eqn: core{t} = inflation{t} + infTar
+Fed funds measurement equation: fedFunds{t} = rffe{t} + FFRbar
+GDP growth measurement equation: annGDPgrowth{t} = d4xgdp{t} + trendGrowth
+Unemployment measurement equation: urate{t} = lur{t} + ustar
+
+MODEL OBSERVABLES
+Annual PCE inflation: 	annualPCEinf:	PCEinf
+Annual core inflation: 	core:		CorePCEinf
+Annual GDP growth: 	annGDPgrowth:	GDPgrowth
+Fed funds:			fedFunds:	FFR
+Unemployment rate: 	urate: 		Unemp
+
+RAW OBSERVABLES
+Annual PCE inflation rate: PCEinf
+Annual core PCE inflation rate: CorePCEinf 
+Civilian unemployment rate: Unemp
+Annual real GDP growth: GDPgrowth
+Fed funds rate: FFR
+
+MODEL EQUATIONS
+Definition of PCE inflation: PCEinflation{t}  = (1/4)*(picnia{t}+ picnia{t-1}+ picniaLag{t-1}+ picniaLag2{t-1})
+Lag identity for picniaLag: picniaLag{t} = picnia{t-1}
+Lag identity for picniaLag2: picniaLag2{t} = picniaLag{t-1}
+Definition of annual GDP growth: d4xgdp{t} = 100*(xgdp{t} - xgdpLag3{t-1})
+Lag identity for xgdp: xgdpLag{t} = xgdp{t-1}
+Lag identity for xgdpLag: xgdpLag2{t} = xgdpLag{t-1}
+Lag identity for xgdpLag2: xgdpLag3{t} = xgdpLag2{t-1}
+Defn of inflation: inflation{t}  = 0.25*(picxfe{t}+picxfe{t-1}+picxfl1{t-1}+picxfl2{t-1}) 
+
+Equation 1: fispol{t} = coffispol*fiscal_{t}                                              %
+Equation 2: rffe{t} =  (1-tayr1)*(1*rstar{t}+.25*(picxfe{t}+picxfe{t-1}+picxfl1{t-1}+picxfl2{t-1}) + tayp0*(picxfe{t}    ) + tayp1*(picxfe{t-1} ) + tayp2*(picxfl1{t-1} ) + tayp3*(picxfl2{t-1} ) + tayx0*xgap2{t}+ tayx1*xgap2{t-1}) + tayr1*rffe{t-1} + polFixVar{t} + etar{t}
+Eqn for policy fixing variable: polFixVar{t} = etaffrFix{t}
+Equation 3: xgap2{t}   = 100*(xgdp{t} - xgdpt{t})
+Equation 4: lur{t}     = lurnat{t} + (lurb1 + lurb2) * (lur{t-1} - lurnat{t-1}) - lurb2 * (lurl1{t-1} - lurnal1{t-1}) + (lurb3 + lurb4) * xgap2{t} - lurb4 * xgap2{t-1} + lurRes{t}
+Persistent unemployment residual: lurRes{t} = 0.95*lurRes{t-1} + 2*etaLurRes{t}
+Equation 5: picnia{t}  = 400*(pcniar{t} - pcniar{t-1} + dlpxp{t})
+Equation 6: picxfe{t}  = 400*(pcxfer{t} - pcxfer{t-1} + dlpxp{t} + picxfeRes{t}) 
+Persistent core inflation residual: picxfeRes{t} = 0.95*picxfeRes{t-1} + 2*etaPicxfe{t}
+Equation 7: pigdp{t}   = 400*(pgdpr{t} - pgdpr{t-1} + dlpxp{t})
+Equation 8: drffe{t}   = rffe{t} - rffe{t-1}
+Equation 9: ec{t}      = ecs1*eco{t} + ecs2*ech{t} + (1-ecs1-ecs2)*kcd{t}
+Equation 10: eco{t}     = eco{t-1} + ecoa1*(qec{t-1}-eco{t-1}) + ecoa2*(eco{t-1}-ecol1{t-1}) + datet*zeco{t} + (1-datet)*lzeco{t-1} + ecod1*(ecos1*(yhl{t}-yhl{t-1})+(1-ecos1)*(yht{t}-yht{t-1})-(datet*zeco{t}+ (1-datet)*lzeco{t-1}) ) + eco_{t}
+Equation 11: qec{t}     = qecs1 * (qecb1 + qecb2) * zyh{t} +  qecs2 * (qecb3 - qecb2) * zyht{t} +  qecs3 * qecb4 * zyhp{t}  +  qecs4 * qecb5 * (qecs5 * (wpsnr{t}-pcniar{t})+(1-qecs5) * wpo{t})
+Equation 12: ecd{t}     = ecd{t-1} +  ecda1 * (qecd{t-1}-ecd{t-1}) +  ecda2 * (ecd{t-1}-ecdl1{t-1}) +  datet * zecd{t} + (1-datet) * lzecd{t-1} +  0.01 * ecdb2 * (datet * zgapc2{t} + (1-datet) * lzgapc2{t-1}) +  ecd_{t}
+Equation 13: qecd{t}    = qec{t} + qecds1 * hggdpt{t}/400 + qecda3 * qecds2 * (rcar{t}-zpi5{t})
+Equation 14: echsh{t}   = (1 + echa1) * echshl1{t} + echa2 * (echshl1{t} - echshl1{t-1}) + echa3 * 0.01 * rrmet{t} + ech_{t}
+Equation 15: ech{t}     =   echs1 * echsh{t} + kh{t-1}
+Equation 16: eh{t}      = eh{t-1}   +  eha1*(qeh{t-1}-eh{t-1}) +  eha2*(eh{t-1}-ehl1{t-1}) +  eha3*(ehl1{t-1}-ehl2{t-1})+datet*zeh{t}+ (1-datet)*lzeh{t-1} + ehb2*(rme{t-1}-rmel1{t-1}) +  ehb3 * (rmel1{t-1}-rmel2{t-1})+  eh_{t}
+Equation 17: qeh{t}     = qec{t} + qehs1 * hggdpt{t}/400 + qeha2 * (qehs2 * ((1-taxon * 0.28) * rme{t}-zpi10{t}) - pcniar{t})
+Equation 18: ecnia{t}   = ecnias1 * eco{t} + ecnias2 * ecd{t} + ecnias3 * ech{t}
+Equation 19: kcd{t}     = kcd1*kcd{t-1} + (1-kcd1)*ecd{t}
+Equation 20: kh{t}      = kh1*kh{t-1} + (1-kh1)*eh{t}
+Equation 21: epdc{t}    = epdc{t-1}+ epdcb1 * (qepdc{t-1}-epdc{t-1}) + epdcb2a * (epdc{t-1}-epdcl1{t-1})+ epdcb2b * (epdcl1{t-1}-epdcl2{t-1}) + epdcb3 * ( datet * (zxbc{t}+zvpdc{t}) + (1-datet) * (lzxbc{t-1}+lzvpdc{t-1}) )+ (1 - epdcb3) * (xb{t-1}-xbl1{t-1}) + epdc_{t}
+Equation 22: qepdc{t}   = xb{t} + vpdc{t} + qepdcs1 * 4 * hgx{t}/400
+Equation 23: epdo{t}    = epdo{t-1} +  epdob1*(qepdol1{t-1}-epdol1{t-1}) +  epdob2a*(epdo{t-1}-epdol1{t-1}) +  epdob2b*(epdol1{t-1}-epdol2{t-1})+ epdob3*(datet*(zxbo{t-1}+zvpdo{t-1}) + (1-datet)*(lzxbol1{t-1}+lzvpol1{t-1})) + (1 - epdob3) * (xb{t-1}-xbl1{t-1}) + epdo_{t}
+Equation 24: qepdo{t}   = xb{t} + vpdo{t} + qepdos1 * 4 * hgx{t}/400
+Equation 25: epd{t}     = epds1 * epdo{t} + (1-epds1) * epdc{t}
+Equation 26: eps{t}     = eps{t-1}+ epsb1 * (qepsl1{t-1}-epsl1{t-1})+ epsb2a * (eps{t-1}-epsl1{t-1})+ epsb2b * (epsl1{t-1}-epsl2{t-1}) + epsb3 * (datet * (zxbs{t-1}+zvps{t-1})+ (1-datet) * (lzxbsl1{t-1}+lzvpsl1{t-1}) )+ (1 - epsb3) * (xb{t-1}-xbl1{t-1})+ eps_{t}
+Equation 27: qeps{t}    =  xb{t} + vps{t} + qepss1 * 4 * hgx{t}/400
+Equation 28: ki{t}      = ki{t-1} +  kib1 * (ki{t-1}-kil1{t-1}) +  kib2 * (efs{t-1}-efsl1{t-1}) +  kib3 * (efsl1{t-1}-efsl2{t-1}) +  kib4 * (kil3{t-1}-kil4{t-1}-(efsl3{t-1}-efsl4{t-1}))+  ki_{t}
+Equation 29: kpdc{t}    = kpdcs1 * kpdc{t-1} + (1-kpdcs1) * epdc{t}
+Equation 30: kpdo{t}    = kpdos1 * kpdo{t-1} + (1-kpdos1) * epdo{t}
+Equation 31: kps{t}     = kpss1 * kps{t-1} + (1-kpss1) * eps{t}
+Equation 32: hks{t}     = 400 * (hkss1 * (kpdc{t}-kpdc{t-1}) + hkss2 * (kpdo{t}-kpdo{t-1}) + hkss3 * (kps{t}-kps{t-1}) + (1 - hkss1 - hkss2 - hkss3) * (ki{t}-ki{t-1}) )
+Equation 33: ks{t}      = ks{t-1} + hks{t}/400
+Equation 34: rpd{t}     = 0.5 * (1-0.35) * (rg5e{t}+rbaae{t}-rg10e{t}) - 0.5 * (datet * zpib5{t}+(1-datet) * lzpib5{t-1})  + 0.5 * req{t}
+Equation 35: rtpdc{t}   = rtpdcs1 * rpd{t} + rtpdcs2 * tapdda{t}  + 0.5 * (ppdcr{t}+ppdcr{t-1}) - pxbr{t} - dlpxp{t}
+Equation 36: rtpdo{t}   =  rtpdos1 * rpd{t} + rtpdos2 * tapdda{t}  - pxbr{t} - dlpxp{t}
+Equation 37: rtps{t}    =  rtpss1 * rpd{t} - pxbr{t} - dlpxp{t}
+Equation 38: tapdda{t}  =  tapdda1 * (rpd{t} + datet * zpib5{t} + (1-datet) * lzpib5{t-1})
+Equation 39: vpdc{t}    =  - rtpdc{t}
+Equation 40: vpdo{t}    =  - rtpdo{t}
+Equation 41: vps{t}     =  - rtps{t}
+Equation 42: ex{t}      = ex{t-1}+ exa1 * (ex{t-1}-fgdp{t-1})+ exa1 * 0.94039 * (fpxr{t-1}-pcniar{t-1})+ exd0 * (fgdp{t}-fgdpl1{t-1})/2 + exd1 * (fgdpl1{t-1}-fgdpl5{t-1})/4 + ex_{t}
+Equation 43: emo{t}     = emo{t-1} + emoa1*(emo{t-1}-0.33 * yh{t-1} - 0.67 * xgdp{t-1})+ emoa1 * 0.743170 * (pmor{t-1}-pgdpr{t-1}) - emoa1 * 0.443955 * (pmor{t-1}+fpxr{t-1}-pcniar{t-1}) + emod0 * (xgap2{t}-xgap2{t-1})/100 + emod1 * (xgap2{t-1}-xgap2l1{t-1})/100+ emod2 * xgap2l1{t-1}/100+ emo_{t}
+Equation 44: ceng{t}    =  ceng{t-1} + cenga1 * (ceng{t-1}-xg{t-1}-veoa{t-1})+ cengb1a * (xg{t}-xg{t-1}) + cengb1b * (xg{t-1}-xgl1{t-1}) + cengb2 * (veoa{t}-veoa{t-1}) + cengb3a * (ceng{t-1}-cengl1{t-1})+ cengb3b * (cengl1{t-1}-cengl2{t-1})+ ceng_{t}
+Equation 45: emp{t}     =  emps1 * ceng{t} + emps2 * xgpot{t}
+Equation 46: em{t}      =  ems1 * emo{t} + ems2 * emp{t}
+Equation 47: fcbnr{t}   = fcbns1 * (pxbr{t}+ex{t}) + fcbns2 * (fcbns2a * (pmor{t}+emo{t})  + fcbns2b * (poilr{t} + pxbr{t} + emp{t})) + fcbns3 * fynicnr{t} + fcbns4 * fynilnr{t} + fcbns5 * (pxgr{t} + xgpot{t})
+Equation 48: fnicnr{t}  = fnicns1 * fnicns3 *fnicnr{t-1} + 0.54 * fnicns1 * fpic{t}/400 - 0.67 * fnicns1 * (fpxr{t} - fpxr{t-1} + fpic{t}/400 - dlpxp{t})- 0.87 * fnicns2 * fcbnr{t}
+Equation 49: fnilnr{t}  = fnilns1 * fnilns3 * fnilnr{t-1} + 0.32 * fnilns1 * pigdp{t}/400  - 0.06 * fnilns1 * (fpxr{t} - fpxr{t-1} + fpic{t}/400 - dlpxp{t}) - 1.87 * fnilns2 * fcbnr{t}
+Equation 50: fynicnr{t} = fynicns1 * rfynic{t} + fnicnr{t-1}
+Equation 51: fynilnr{t} = fynilns1 * rfynil{t} + fnilnr{t-1}
+Equation 52: rfynic{t}  = rfynic{t-1} + rfynica1 * (rfynic{t-1} - rfynil{t-1}) + rfynica2 * (rfynic{t-1} - rfyncl1{t-1})+ rfynica3 * (rfynil{t} - rfynil{t-1})+ rfynic_{t}
+Equation 53: rfynil{t}  = (1 + rfynila1) * rfynil{t-1} + rfynila2 * rg10e{t-1}  + rfynila3 * rtbe{t-1} + rfynila4 * reqp{t-1} + rfynila5 * (rfynil{t-1} - rfynll1{t-1}) + rfynila6 * (rg10e{t} - rg10e{t-1})+ rfynila7 * (rtbe{t} - rtbe{t-1}) + rfynila8 * (reqp{t} - reqp{t-1}) + rfynil_{t}
+Equation 54: xgdp{t}    = xgdps1*ecnia{t} + xgdps2*eh{t} + xgdps3*epd{t} + xgdps4*eps{t} + xgdps5*ki{t} + xgdps6*ki{t-1} + xgdps7*ex{t} + xgdps8*em{t} + xgdps9*(egfs1*egfo{t} + egfs2*egfi{t} + egfs3*egfl{t}) + xgdps10*(egss1*egso{t} + egss2*egsi{t} + egss3*egsl{t})
+Equation 55: xb{t}      =  xbs1 * xgdp{t} + xbs2 * (xgvs1 * egfl{t} + (1 - xgvs1) * egsl{t}) + xbs3 * xgpot{t}
+Equation 56: xg{t}      =  xgs1 * xb{t} + (1 - xgs1) * emp{t}
+Equation 57: xp{t}      =  xps1 * ecnia{t} + xps2 * eh{t} + xps3 * epd{t} + xps4 * eps{t} + xps5 * ex{t}  + xps6 * egfi{t} + xps7 * egfo{t}  + xps8 * egsi{t}   + xps9 * egso{t}
+Equation 58: efs{t}     = efss1 * xb{t} +  efss2 * ki{t} + efss3 * ki{t-1}
+Equation 59: hmfpt{t}   = hmfptrho*hmfpt{t-1} + hmfpt_{t}
+Equation 60: mfpt{t}    =  mfpt{t-1} + hmfpt{t}/400 + mfpt_{t}
+Equation 61: veoa{t}    =  veoaa1*veoa{t-1}- (1-veoaa1)*pcengr{t-1}
+Equation 62: xgpot{t}   =  (0.7*leppot{t} + .265*ks{t} + .035*veoa{t} + mfpt{t})/(1-.035)
+Equation 63: hgx{t}     =  (0.7*400*(leppot{t} - leppot{t-1}) + 0.265*hks{t}  + 0.035 * 400 * (veoa{t} - veoa{t-1}) + hmfpt{t})/(1-0.035)
+Equation 64: empt{t}    =  empt{t-1} + empta1*(emp{t-1}-empt{t-1})+ hgemp{t}/400
+Equation 65: hgemp{t}   =  hgempa1 * hgemp{t-1}+ (1 - hgempa1) * 400 * (emp{t} - emp{t-1})
+Equation 66: xgvt{t}    =  xgvt{t-1}+ xgvta1 * (xgvs1 * egfl{t-1} + (1-xgvs1) * egsl{t-1}- xgvt{t-1})+ hgxgv{t}/400
+Equation 67: hgxgv{t}   =  hgxgva1 * hgxgv{t-1}  + (1 - hgxgva1) * 400 * (xgvs1 * (egfl{t} - egfl{t-1}) + (1- xgvs1) * (egsl{t} - egsl{t-1}))
+Equation 68: xhhit{t}   = xhhit{t-1}+ xhhita1 * (xgpot{t-1} - xhhit{t-1}) + hgxhhi{t}/400
+Equation 69: hgxhhi{t}  =  hgxhhia1 * hgxhhi{t-1}+ (1 - hgxhhia1) * 400 * (xgpot{t} - xgpot{t-1})
+Equation 70: xgap{t}    =  100*(xg{t}-xgpot{t})
+Equation 71: xgdpt{t}   =  xgdpts1*xgpot{t}  + xgdpts2*empt{t}+ xgdpts3*xgpot{t} + xgdpts4*xgvt{t}+ xgdpts5*xhhit{t}
+Equation 72: hggdpt{t}  =  xgdpts1*hgx{t}  + xgdpts2*hgemp{t}   + xgdpts3*hgx{t}      + xgdpts4*hgxgv{t}             + xgdpts5*hgxhhi{t}
+Equation 73: lhp{t}     = lhp{t-1} + lhpb2*(qlhp{t-1}-lhp{t-1}- (mfpt{t}-mfpt{t-1})/0.965) + lhpb3*(lhp{t-1}-lhpl1{t-1}) + lhpb4*(datet*zlhp{t}+ (1-datet)*lzlhp{t-1}) + lhpb5*(xg{t}- xgl1{t} - (hgxl1{t}/400 - leppol1{t} + leppol2{t}) - (hmfpt{t} - hmfptl1{t})/(400 * 0.965)) + lhpb6*(xgl1{t} - xgl1{t-1} - (hgxl1{t-1}/400 - leppol2{t} + leppol2{t-1})-(hmfptl1{t}-hmfptl1{t-1})/(400 * 0.965)) + lhp_{t}
+Equation 74: qlhp{t}    =  xg{t} - lprdt{t}
+Equation 75: lww{t}     =  (1 - lwwa2) * lww{t-1} + lwwa3 * (lhp{t} - 2*lhpl1{t} + lhpl1{t-1})
+Equation 76: lep{t}     =  lhp{t} - lww{t}
+Equation 77: leo{t}     =  leors1 * leh{t} - leors2 * lep{t}  - leors3 * (egsl{t} - dglprd * lprdt{t})        - leors4 * (egfl{t} - dglprd * lprdt{t})
+Equation 78: leh{t}     =  lehs1 * lfpr{t} - lehs2 * lur{t}
+Equation 79: lfpr{t}    =  (1-lfpra1) * lfpr{t-1} + lfpra2 * (lur{t-1}-lurnat{t-1})
+Equation 80: left{t}    =  lefta1 * left{t-1} + (1-lefta1)*(egfl{t} - dglprd * lprdt{t})
+Equation 81: lest{t}    = lesta1 * lest{t-1}+ (1-lesta1)*(egsl{t} - dglprd * lprdt{t})
+Equation 82: leppot{t}  =  leppots1 * lurnat{t} + leppots2 * left{t}   + leppots3 * lest{t}
+Equation 83: lurnat{t}  =  0*lurnat{t-1} + etalurnat{t}
+Equation 84: lprdt{t}   =  xgpot{t} - leppot{t}
+Equation 85: jccanr{t}  =  jccans1*kh{t-1} + jccans2*kpdc{t-1}+ jccans3*kpdo{t-1}+ jccans4*kps{t-1}+ jccans5*(xgdpt{t}+pgdpr{t})
+Equation 86: qynidnr{t} =  qynidb2 * (ynicpnr{t} + qynids1 * (trfci{t} + trsci{t}))
+Equation 87: rrmet{t}   =  rrmeta1*rrmet{t-1} + (1-rrmeta1)*(rme{t}- zpi10{t})
+Equation 88: tryh{t}    =  tryhs1 * tfpnr{t} + tryhs2 * tspnr{t}+ tryhs3 * (yhl{t} + pcniar{t})   + tryhs4 * (yhptns1*xbnr{t} + yhptns2*yhinr{t} + yhptns3*ynidnr{t})
+Equation 89: wdnfcnr{t} =  wdnfcnr{t-1}+ wdnfca1 * (wdnfcnr{t-1} + wdnfcs1 * yninr{t-1} + wdnfcs2 * ynilnr{t-1}) + wdnfcb1 * (wdnfcnr{t-1}-wdnfcl1{t-1})+ wdnfcb2 * (wdnfcl1{t-1}-wdnfcl2{t-1}) + wdnfcb3 * xgap2{t}+ wdnfcnr_{t}
+Equation 90: xbnr{t}    =  xbns1 * xgdpnr{t} + xbns2 * (plr{t}  - dglprd * lprdt{t} + xgvs1 * egfl{t} + (1 - xgvs1) * egsl{t})+ xbns3 * (pxbr{t} + xgpot{t})
+Equation 91: xgdpnr{t}  =  xgdpns1 * xp{t} + xgdpns2 * (pxbr{t} + ki{t}) + xgdpns3 * (pxbr{t} + ki{t-1}) + xgdpns4 * (ems1 * (pmor{t} + emo{t}) + ems2 * (poilr{t} + pxbr{t} + emps1*ceng{t} + emps2*xgpot{t}))      + xgdpns5 * (plr{t} - dglprd * lprdt{t} + egfl{t})        + xgdpns6 * (plr{t} - dglprd * lprdt{t} + egsl{t})
+Equation 92: xgnr{t}    =  xgns1*xbnr{t} + (1-xgns1)*(emps1*ceng{t} + emps2*xgpot{t} + poilr{t} + pxbr{t})
+Equation 93: ycsnr{t}   =  ycsns1 * ynicpnr{t} + ycsns2 * (trfci{t} + trsci{t})+ ycsns3 * ynidnr{t}+ ycsns4 * (jccacs1 * jccanr{t} + jccacs2 * (pgdpr{t} + xgdpt{t})+jccacs3 * kh{t-1})
+Equation 94: yh{t}      =  yhs1*yhl{t} + yhs2*yht{t}  + yhs3*yhp{t}
+Equation 95: yhibnr{t}  =  yhibnr{t-1}+ yhibna1 * ((picxfe{t} + picxfe{t-1} + picxfl1{t-1} + picxfl2{t-1})/1600 - (dlpxp{t} + dlpxp{t-1} + dlpxpl1{t-1} + dlpxpl2{t-1})/4 )+ yhibna3 * (ecnia{t-1} + pcniar{t-1} - yhibnr{t-1})+ yhibna4 * (yhibnr{t-1}-yhibnl1{t-1}  - (picxfe{t-1} + picxfl1{t-1} + picxfl2{t-1} + picxfl3{t-1})/1600- (dlpxp{t-1} + dlpxpl1{t-1} + dlpxpl2{t-1} + dlpxpl3{t-1})/4 ) + yhibna6 * rcar{t-1} + yhibna7 * (pcxfer{t-1}-pcniar{t-1}+ecd{t-1}-ecnia{t-1}) + yhibna8 * (rffe{t}-rffe{t-1})+ yhibnr_{t}
+Equation 96: yhinr{t}   =  yhins1*yniinr{t} + yhins2*gfintnr{t} + yhins3*gsintnr{t} + yhins4*yhibnr{t}
+Equation 97: yhl{t}     =  ynilnr{t} - pcniar{t} + yhls1*tryh{t} + yhls2 * trssi{t}
+Equation 98: yhp{t}     =    yhps1 * (yhptns1*xbnr{t} + yhptns2*yhinr{t} + yhptns3*ynidnr{t})+ yhps2 * (yhpntnr{t} - tryh{t}) - pcniar{t}
+Equation 99: yhpntnr{t} =   yhpntns1 * (pcxfer{t}+kcd{t-1}) + yhpntns2 * yhibnr{t}   + yhpntns3 * (trfci{t} + trsci{t}) + yhpntns4 * ynicpnr{t}   + yhpntns5 * ynidnr{t} + yhpntns6 * zpi10{t}+ yhpntns7 * gfdbtnr{t}  + yhpntns8 * gsdbtnr{t}
+Equation 100: yht{t}     =  xgdpt{t} + yhts1 * (gftrd{t} + gstrd{t})
+Equation 101: ynicpnr{t} =  ynicpns1 * yninr{t}+ ynicpns2 * ynilnr{t}+ ynicpns3 * yniinr{t}+ ynicpns4 * xbnr{t}+ ynicpns5 * (ecnia{t} + pcniar{t})+ ynicpns6 * trsib{t}+ ynicpns7 * (pgdpr{t} + xgdpt{t})
+Equation 102: ynidnr{t}  =  ynidnr{t-1} + pxbr{t} - pxbr{t-1}+ ynidna1 * (qynidnr{t-1}-ynidnr{t-1})+ ynidna2 * (ynidnr{t-1}-ynidnl1{t-1}  - (pxbr{t-1} - pxbrl1{t-1})) + datet * zynid{t} + (1-datet) * lzynid{t-1}  + ynidnr_{t}
+Equation 103: yniish{t}  =  yniina1 * yniish{t-1} - (yniina2*yniins3 + yniina3*yniins4 + yniina5*yniins5) * (yniins2*yninr{t-1} + (1-yniins2)*ynilnr{t-1}) + yniina2*yniins3*(kh{t-1} + yniins6*rrmet{t}) + yniina3*yniins4*(wdnfcnr{t-1} + yniins7*rbaae{t}) + yniina4*yniins4*(wdnfcnr{t-1} - wdnfcl1{t-1} + yniins7*(rbaae{t}-rbaae{t-1})- yniins2*(yninr{t-1}-yninrl1{t-1}) - (1-yniins2)*(ynilnr{t-1}-ynilnl1{t-1}))  + yniina5*(yniins8*fnicnr{t-1}-(yniins8-yniins5)*fnicnr{t-1}) + yniish_{t}
+Equation 104: yniinr{t}  =  yniins1 * yniish{t} + yniins2 * yninr{t-1} + (1 - yniins2) * ynilnr{t-1}
+Equation 105: ynilnr{t}  =  plr{t} + ynilns1 * lhp{t} + ynilns2 * (egfl{t} - dglprd * lprdt{t})+ ynilns3 * (egsl{t} - dglprd * lprdt{t})
+Equation 106: yninr{t}   =  ynins1 * xgdpnr{t} + ynins2 * fynicnr{t} + ynins3 * fynilnr{t}  + ynins4 * jccanr{t}
+Equation 107: ypnr{t}    =  ypns1 * (yhl{t} + pcniar{t}) + ypns2 * (yht{t} + pcniar{t}) + ypns3 * (yhptns1*xbnr{t} + yhptns2*yhinr{t} + yhptns3*ynidnr{t})
+Equation 108: picnia{t}/400 =   pcniaa1 * (qpcniar{t-1}-pcniar{t-1}) +  pcniaa21 * picnia{t-1}/400 +  pcniaa22 * picnil1{t-1}/400+  pcniaa23 * picnil2{t-1}/400 +  pcniaa24 * picnil3{t-1}/400 +   datet * lzpc{t} +  (1-datet) * lzpc{t-1} +  pcniaa4 * (datet * lzlurc{t} +  (1-datet) * lzlurc{t-1})+ pcniaa5 * pcnias1 * (pcer{t}-pcer{t-1})+  pcniaa6 * pimor{t} +  pcniaa8 * pcnias2 * (pcfr{t}-pcfr{t-1}) +  pcniar_{t}
+Equation 109: dpxnc{t}   =   pxnca1 * (qpxncr{t-1}-pxncr{t-1}) +  pxnca21 * dpxnc{t-1}+  pxnca22 * dpxncl1{t-1} +  pxnca23 * dpxncl2{t-1} +   datet * lzpnc{t}  +  (1-datet) * lzpnc{t-1}+  pxnca4 * (datet * lzlurnc{t} +  (1-datet) * lzlurnc{t-1}) +  pxnca5 * pcnias1 * (pcer{t}-pcer{t-1})+pxnca6 * pimor{t}+  pxnca8 * pcnias2 * (pcfr{t}-pcfr{t-1}) +  pxncr_{t}
+Equation 110: dlpl{t}    =  pipla1 * (qplr{t-1}-plr{t-1}) + pipla21 * dlpl{t-1}+ pipla22 * dlpll1{t-1} + pipla23 * dlpll2{t-1}+ datet * zpl{t} + (1-datet) * lzpl{t-1}+ pipla4 * (datet * zlurl{t} + (1-datet) * lzlurl{t-1}) + pipla6 * dlpls1 * (ynilnr{t} - ynilnr{t-1} + tsiens1 * (trssi{t} - trssi{t-1}) - (lhp{t} - lhp{t-1}) - dlpl{t}) + pipla7 * dlpls2 * (plminr{t} - plminr{t-1}) +dlpl_{t}
+Equation 111: plr{t}    =  plr{t-1} + dlpl{t} - dlpxp{t}
+Equation 112: qpcniar{t}  = qpxpr{t} + qpcnias1 * uqpca2 * (pmor{t} - pcniar{t})
+Equation 113: qpxncr{t} = pxncr{t} + qpxnca1 * qpxpr{t} + qpxnca2 * (qpcniar{t}-pcniar{t})
+Equation 114: qplr{t}   =  plr{t} + pxgr{t} - qpxgr{t}
+Equation 115: qpxpr{t}  =  qpxps1 * (qpxgr{t} - pxgr{t})
+Equation 116: qpxgr{t}  =  plr{t} - lprdt{t}
+Equation 117: ppdcr{t}  =  0*ppdcr{t-1}
+Equation 118: poilr{t}  =  qsector * ((1 + poilra1) *poilr{t-1} + poilrb1*(poilr{t-1} - poilrl1{t-1}))+ poilr_{t}
+Equation 119: pcengr{t} =  (1 + pcengrb2) *pcengr{t-1} + pcengrb1 * (pcengr{t-1} - pcengl1{t-1})+ pcengrb3 * poilr{t-1}+ pcengrb4 * (poilr{t}-poilr{t-1}) + pcengr_{t}
+Equation 120: pcer{t}   =  (1 + pcera1) * pcer{t-1}+ pcera2 * (pcengr{t-1} + pxbr{t-1} - pcxfer{t-1}) + pcerb1 * (pcer{t-1} - pcerl1{t-1})+ pcerb2 * (pcengr{t} + pxbr{t} - pcxfer{t} - (pcengr{t-1} + pxbr{t-1} - pcxfer{t-1}))+ pcerb3 * (poilr{t} + pxbr{t} - pcxfer{t} - (poilr{t-1} + pxbr{t-1} - pcxfer{t-1})) + pcer_{t}
+Equation 121: pcfr{t}   =   (1 + pcfra1) * pcfr{t-1} + pcfrb11 * (pcfr{t-1} - pcfrl1{t-1}) + pcfrb12 * (pcfrl1{t-1} - pcfrl2{t-1}) + pcfrb13 * (pcfrl2{t-1} - pcfrl3{t-1}) + pcfr_{t}
+Equation 122: uces{t}   =  (1 + ucesa1) * uces{t-1} + ucesa2 * pcer{t-1} + ucesa3 * (ceng{t-1} - xg{t-1}) + ucesb1 * (uces{t-1} - ucesl1{t-1})+ ucesb2 * (pcer{t} - pcer{t-1}) + ucesb3 * (ceng{t} - xg{t} - (ceng{t-1} - xg{t-1})) + uces_{t}
+Equation 123: ucfs{t}   =  (1 + ucfsa1) * ucfs{t-1}+ ucfsa2 * pcfr{t-1}+ ucfsb1 * (ucfs{t-1}-ucfsl1{t-1})+ ucfsb3 * (pcfr{t}-pcfr{t-1})+ ucfs_{t}
+Equation 124: pcxfer{t} =  pcniar{t} - pcnias1 * pcer{t} - pcnias2 * pcfr{t}
+Equation 125: pmor{t}   =  pmor{t-1} - dlpxp{t} + pmoa1 * (0.64 * (pcniar{t-1}-fpxr{t-1}) + 0.36 * pxbr{t-1} - pmor{t-1})+ pmoa2 * (pcniar{t} - pcniar{t-1} - (fpxr{t} - fpxr{t-1}))+ pmoa3 * (pxbr{t} - pxbr{t-1} + dlpxp{t}) + pmor_{t}
+Equation 126: pgdpr{t}  =  xgdpnr{t} - xgdp{t}
+Equation 127: plminr{t}  = 0*one{t}
+Equation 128: pxbr{t}   =  xbnr{t} - xb{t}
+Equation 129: pxgr{t}   =  xgnr{t} - xg{t}
+Equation 130: hgpmor{t}  =  hgpmora1 * hgpmor{t-1}+ (1-hgpmora1) * 400 * (pmor{t}+dlpxp{t}-pmor{t-1}-dlpxp{t-1})
+Equation 131: pimor{t} =  pimors1 * (pmor{t} - pmor{t-1} - hgpmor{t}/400)
+Equation 132: dpxnc{t}   = pxncr{t} - pxncr{t-1} + dlpxp{t}
+Equation 133: dlpxp{t}   =  xps1 * picnia{t}/400+ (1 - xps1) * dpxnc{t}
+Equation 134: egfi{t}    = gsector*(egfi{t-1} +egfia1*(egfi{t-1}-egt{t-1}) +egfia2a*(egfi{t-1}-egfil1{t-1}) +egfia2b*(egfil1{t-1}-egfil2{t-1}) + egfia3*(egt{t}-egt{t-1})+egfia4a*xgap2{t}+egfia4b*xgap2{t-1}) + egfi_{t}
+Equation 135: egfl{t}    = gsector*(egfl{t-1} +egfla1*(egfl{t-1}-egt{t-1}) +egfla2a*(egfl{t-1}-egfll1{t-1}) +egfla2b*(egfll1{t-1}-egfll2{t-1}) + egfla3*(egt{t}-egt{t-1})+egfla4a*xgap2{t}+egfla4b*xgap2{t-1}) + egfl_{t}
+Equation 136: egfo{t}    = gsector*(egfo{t-1} +egfoa1*(egfo{t-1}-egt{t-1}) +egfoa2a*(egfo{t-1}-egfol1{t-1}) +egfoa2b*(egfol1{t-1}-egfol2{t-1}) + egfoa3*(egt{t}-egt{t-1})+egfoa4a*xgap2{t}+egfoa4b*xgap2{t-1}) + fispol{t}
+Equation 137: egsi{t}    = gsector*(egsi{t-1} +egsia1*(egsi{t-1}-egt{t-1}) +egsia2a*(egsi{t-1}-egsil1{t-1}) +egsia2b*(egsil1{t-1}-egsil2{t-1}) + egsia3*(egt{t}-egt{t-1})+egsia4a*xgap2{t}+egsia4b*xgap2{t-1}) + egsi_{t}
+Equation 138: egsl{t}    = gsector*(egsl{t-1} +egsla1*(egsl{t-1}-egt{t-1}) +egsla2a*(egsl{t-1}-egsll1{t-1}) +egsla2b*(egsll1{t-1}-egsll2{t-1}) + egsla3*(egt{t}-egt{t-1})+egsla4a*xgap2{t}+egsla4b*xgap2{t-1}) + egsl_{t}
+Equation 139: egso{t}    = gsector*(egso{t-1} +egsoa1*(egso{t-1}-egt{t-1}) +egsoa2a*(egso{t-1}-egsol1{t-1}) +egsoa2b*(egsol1{t-1}-egsol2{t-1}) + egsoa3*(egt{t}-egt{t-1})+egsoa4a*xgap2{t}+egsoa4b*xgap2{t-1}) + egso_{t}
+Equation 140: egt{t}     =  egt{t-1} + egta1 * (egt{t-1} - xgdpt{t-1})+ (hggdpt{t} + hggdpl1{t} + hggdpl2{t} + hggdpl2{t-1})/1600
+Equation 141: eg{t}      =  egs1*(egfs1*egfo{t} + egfs2*egfi{t} + egfs3*egfl{t})+ egs2*(egss1*egso{t} + egss2*egsi{t} + egss3*egsl{t})
+Equation 142: gfdbtnr{t} =  gfdbtns1 * gfdbtnr{t-1}+ gfdbtns2 * gfexpnr{t} + gfdbtns3 * gfrecnr{t} + gfdbtns4 * egfi{t} + gfdbtns5 * (pgdpr{t} + xgdpt{t})
+Equation 143: gfintnr{t} = gfdbtnr{t-1} + gfintns1 * rgfint{t}
+Equation 144: gfrecnr{t} =  gfrecns1 * tfpnr{t}+ gfrecns2 * (trfcis1 * trfci{t} + ynicpnr{t}) + gfrecns3 * (ecnia{t} + pcniar{t})+ gfrecns4 * ynilnr{t}
+Equation 145: gfexpnr{t} =  gfexpns1 * (plr{t} - dglprd * lprdt{t} + egfl{t}) + gfexpns2 * egfo{t} + gfexpns3 * (xgdpt{t} + pcniar{t} + gfptns1*gftrd{t}) + gfexpns4 * gfintnr{t}  + gfexpns5 * (pgdpr{t} + xgdpt{t})  + gfexpns6 * (pgdpr{t} + xgdpt{t})
+Equation 146: gfdefnr{t} =  gfdefns1 * gfexpnr{t} + (1 - gfdefns1) * gfrecnr{t}
+Equation 147: gftrd{t}   =  gftrda1 *gftrd{t-1} + gftrda2 * xgap2{t}  + gftrd_{t}
+Equation 148: gsdbtnr{t} =  gsdbtns1 * gsdbtnr{t-1} + gsdbtns2 * gsexpnr{t}+ gsdbtns3 * gsrecnr{t}   + gsdbtns4 * egsi{t}+ gsdbtns5 * (pgdpr{t} + xgdpt{t})
+Equation 149: gsintnr{t} =  gsintns1 * (gsdbtnr{t-1} + gfintns1*rgfint{t})  + (1 - gsintns1) * xbnr{t}
+Equation 150: gsrecnr{t} =  gsrecns1 * tspnr{t} + gsrecns2 * (trscis1*trsci{t} + ynicpnr{t}) + gsrecns3 * (trsibs1*trsib{t} + ecnia{t} + pcniar{t})+ gsrecns4 * (trssis1*trssi{t} + ynilnr{t}) + gsrecns5 * (pgdpr{t} + xgdpt{t})
+Equation 151: gsexpnr{t} =  gsexpns1 * (plr{t} - dglprd * lprdt{t} + egsl{t}) + gsexpns2 * egso{t} + gsexpns3 * (xgdpt{t} + gsptns1*gstrd{t} + pcniar{t}) + gsexpns4 * gsintnr{t} + gsexpns5 * (pgdpr{t} + xgpot{t})
+Equation 152: gssrpnr{t} =  gssrpns1 * gsrecnr{t} + (1 - gssrpns1) * gsexpnr{t}
+Equation 153: gstrd{t}   =  gstrda1 * gstrd{t-1} + gstrda2 * xgap2{t} + gstrd_{t}
+Equation 154: rgfint{t}  =  rgfint{t-1} + rgfinta1 * (rg5e{t-1}/100 - rgfint{t-1}) + rgfinta2 * (rtbe{t-1}/100 - rg5e{t-1}/100) + rgfintb1 * (rgfint{t-1} - rgfinl1{t-1})+ rgfintb2 * (rg5e{t-1} - rg5el1{t-1})/100 + rgfintb3 * (rtbe{t} - rtbe{t-1})/100  + rgfint_{t}
+Equation 155: tfpnr{t}   =  tfpns4 * trfp{t}+ tfpns1 * ypnr{t} + tfpns2 * (xgdpt{t} + gfptns1*gftrd{t} + pcniar{t})+ tfpns3 * (xgdpt{t} + gsptns1*gstrd{t} + pcniar{t})
+Equation 156: trfci{t}   =  trfcia1 * trfci{t-1} + trfcia4 * xgap2{t} + trfcia5 * picnia{t}  + trfci_{t}
+Equation 157: trfp{t}    =  trfpt{t}   + trfpa21 * (trfp{t-1}-trfpt{t-1})+ trfpa22 * (trfpl1{t-1}-trfptl1{t-1}) + trfpa3 * xgap2{t-1}  + trfp_{t}
+Equation 158: trfpt{t}   =  trfpt{t-1}+ trfpt1 * (gfdbtnr{t-1}-xgdpnr{t-1}) + trfpt2 * (gfdbtnr{t-1}-xgdpnr{t-1}- (gfdbtl1{t-1}-xgdpnl1{t-1}))
+Equation 159: trsci{t}   =  trscia1 *trsci{t-1}  + trscia31 * xgap2{t}+ trscia32 * xgap2{t-1}+ trscia4 * (trfci{t}-trfci{t-1})+ trsci_{t}
+Equation 160: trsib{t}   =  trsiba1 * trsib{t-1} + trsiba3 * xgap2{t}  + trsib_{t}
+Equation 161: trsp{t}    =  trspa1 * trsp{t-1}  + trspa21 * trspt{t} + trspa22 * trspt{t-1} +trspa3 * xgap2{t-1} + trspa4 * (trfp{t}-trfp{t-1})+trsp_{t}
+Equation 162: trspt{t}   =  trspt{t-1} + trspt1 * (gsdbtnr{t-1}-xgdpnr{t-1}) + trspt2 * (gsdbtnr{t-1}-xgdpnr{t-1}- (gsdbtl1{t-1}-xgdpnl1{t-1}))
+Equation 163: trssi{t}   =  trssia11 * trssi{t-1}+ trssia12 * trssil1{t-1}+ trssia3 * xgap2{t}+ trssi_{t}
+Equation 164: tspnr{t}   =  tspns4 * trsp{t} + tspns1 * ypnr{t} + tspns2 * (xgdpt{t} + gfptns1*gftrd{t} + pcniar{t}) + tspns3 * (xgdpt{t} + gsptns1*gstrd{t} + pcniar{t})
+Equation 165: rffe{t}    =  rfftay{t} 
+Equation 166: rtbe{t}    =  rtbeb11 * rtbe{t-1}+ rtbeb12 * rtbel1{t-1}+ rtbeb21 * rffe{t} + rtbeb22 * rffe{t-1} + rtbe_{t}
+Equation 167: rg5e{t}    = zrff5{t} + rg5p{t}
+Equation 168: rg5p{t}    =  rg5pa1 * zgap05{t}+ rg5pa2 * rg5p{t-1} - rg5pa1 * rg5pa2 * zgap05{t-1}  + rg5p_{t} 
+Equation 169: rg10e{t}   = zrff10{t} + rg10p{t}
+Equation 170: rg10p{t}   =  rg10pa1 * zgap10{t}  + rg10pa2 * rg10p{t-1}- rg10pa1 * rg10pa2 * zgap10{t-1} + rg10p_{t} 
+Equation 171: rbaae{t}   = zrff10{t} + rbaap{t}
+Equation 172: rbaap{t}   =  rbaapa1 * zgap10{t} + rbaapa2 * rbaap{t-1}- rbaapa1 * rbaapa2 * zgap10{t-1} + rbaap_{t} 
+Equation 173: rcbe{t}    = zrff30{t} + rcbp{t}
+Equation 174: rcbp{t}    =  rcbpa1 * zgap30{t}+ rcbpa2 * rcbp{t-1} - rcbpa1 * rcbpa2 * zgap30{t-1}+ rcbp_{t} 
+Equation 175: rcar{t}    =  rcara3 * rcar{t-1}+ rcara41 * rg5e{t}+ rcara42 * rg5e{t-1} + rcar_{t}
+Equation 176: rme{t}     =  rmea1 * rme{t-1} + rmea21 * rbaae{t} + rmea22 * rbaae{t-1} + rmea3 * (rbaae{t}-rtbe{t}) + rme_{t}
+Equation 177: req{t}     =  rcbe{t} - zpic30{t} + reqp{t}
+Equation 178: reqp{t}    =  reqpb1 * reqp{t-1} + reqp_{t}
+Equation 179: wpsnr{t}   =  ynidnr{t} - wpsns1 * (req{t} - zdivgr{t})
+Equation 180: rcgain{t}  = rcgaina1 * rcgain{t-1} + rcgaina2 * (picxfe{t}+picxfe{t-1}+picxfl1{t-1}+picxfl2{t-1})/4 + rcgaina5 * xgap2{t} + rcgain_{t}
+Equation 181: wpo{t}     =  wpos1 * wpo{t-1} + wpos2 * (ydns1*ypnr{t}+ydns2*tfpnr{t}+ydns3*tspnr{t}-pcniar{t})+ wpos3 * ecnia{t} + wpos4 * (yhibnr{t}-pcniar{t})+ wpos5 * (ecd{t}+pcxfer{t}-pcniar{t})+ wpos6 * (kcd{t-1}+pcxfer{t}-pcniar{t}) + wpos7 * (rcgain{t}-picnia{t})
+Equation 182: fxgap{t}   =  fsector*( fxgapb1a*fxgap{t-1}+ fxgapb1b*fxgapl1{t-1} + fxgapb2*(frl10{t-1}-fpi10t{t-1})+ fxgapb3*xgap2{t-1}+ fxgapb4*rstar{t-1}+ fxgap_{t} )
+Equation 183: fgdp{t}    = fgdpt{t} + fxgap{t}/100
+Equation 184: fgdpt{t}   =  fgdpt{t-1} + fgdpta1 * (fgdpt{t-1} - xgdpt{t-1})   + (hggdpt{t} + hggdpl1{t} + hggdpl2{t} + hggdpl2{t-1})/1600
+Equation 185: fpi10{t}   =  fsector*( (fpi10{t-1}+fpi10l1{t-1}+fpi10l2{t-1}+fpi10l3{t-1})/4 + fpi10b2*fxgap{t-1}+ fpi10b3a*(poilr{t}-poilr{t-1})+ fpi10b3b*(poilr{t-1}-poilrl1{t-1})+ fpi10_{t})
+Equation 186: fpi10t{t}  = fsector*(fpi10tb1*fpi10t{t-1} + fpi10tb2*fpi10{t})
+Equation 187: fpic{t}    =  fsector*(fpicb1*fpi10{t} + fpicb2*fpic{t-1})
+Equation 188: frs10{t}   =  fsector*( frs10b1*rstar{t-1}+ frs10b2*(fpi10{t}+fpi10{t-1}+fpi10l2{t}+fpi10l2{t-1})/4 + frs10b3*(fpi10{t}+fpi10{t-1}+fpi10l2{t}+fpi10l2{t-1})/4+ frs10b4*fxgap{t})
+Equation 189: frl10{t}   =  fsector * (frl10{t-1}+ frl10b1 * (frl10{t-1} - frs10{t-1})+ frl10b2 * (frl10{t-1} - frl10l1{t-1})  + frl10b3 * (frs10{t} - frs10{t-1})+ frl10b4 * (fxgap{t} - fxgap{t-1})+ frl10_{t})
+Equation 190: fpxr{t}    =  fpxrr{t} + fpxrb1 * (rg10e{t}-zpi10{t}-(frl10{t}-fpi10t{t})) + fpxrb2 * (fpxrs1 * (fnicnr{t} - xgdpnr{t}) + fpxrs2 * (fnilnr{t} - xgdpnr{t}))
+Equation 191: fpxrr{t}   =  (fprho - fpxrrb1) * fpxrr{t-1}+ fpxrrb2 * (fpxrr{t-1} - fpxrrl1{t-1})+ fpxrr_{t}
+Equation 192: rstar{t}   =  rstar1*rstar{t-1} + (1-rstar1)*(rffe{t}-picnia{t})
+Equation 193: zeco{t}    =  zfecoa1*(qec{t}-qec{t-1})+ zfecoa2*(qec{t+1}-qec{t}) + zfecoa6*zeco{t+1} + zfecoa7*lzeco{t+1}
+Equation 194: zecd{t}    =   zfecda1*(qecd{t}-qecd{t-1}) + zfecda2*(qecd{t+1}-qecd{t})    + zfecda6*zecd{t+1}+ zfecda7*lzecd{t+1}
+Equation 195: zgapc2{t}  =  zfgapc2a1*xgap2{t}+ zfgapc2a6*zgapc2{t+1}+ zfgapc2a7*lzgapc2{t+1}
+Equation 196: zeh{t}     =    zfeha1*(qeh{t}-qeh{t-1}) + zfeha2*(qeh{t+1}-qeh{t})  + zfeha3*(qehf1{t+1}-qeh{t+1})+ zfeha6*zeh{t+1}+ zfeha7*lzeh{t+1}+zfeha8*zehf2{t+1}
+Equation 197: zvpdc{t}   = zfvpdc1*(vpdc{t}-vpdc{t-1})+ zfvpdc2*(vpdc{t+1}-vpdc{t})+ zfvpdc3*(vpdcf1{t+1}-vpdc{t+1})+ zfvpdc6*zvpdc{t+1}  + zfvpdc7*lzvpdc{t+1}+ zfvpdc8*zvpdcf2{t+1}
+Equation 198: zvpdo{t}   = zfvpdo1*(vpdo{t}-vpdo{t-1})+ zfvpdo2*(vpdo{t+1}-vpdo{t})+ zfvpdo3*(vpdof1{t+1}-vpdo{t+1})+ zfvpdo6*zvpdo{t+1}  + zfvpdo7*lzvpdo{t+1}+ zfvpdo8*zvpdof2{t+1}
+Equation 199: zvps{t}    = zfvps1*(vps{t}-vps{t-1})+ zfvps2*(vps{t+1}-vps{t})+ zfvps3*(vpsf1{t+1}-vps{t+1})+ zfvps6*zvps{t+1}  + zfvps7*lzvps{t+1}+ zfvps8*zvpsf2{t+1}
+Equation 200: zxbc{t}    = zfxbc1*(xb{t}-xb{t-1})+ zfxbc2*(xb{t+1}-xb{t})+ zfxbc3*(xbf1{t+1}-xb{t+1})+ zfxbc6*zxbc{t+1}  + zfxbc7*lzxbc{t+1}+ zfxbc8*zxbcf2{t+1}
+Equation 201: zxbo{t}    = zfxbo1*(xb{t}-xb{t-1})+ zfxbo2*(xb{t+1}-xb{t})+ zfxbo3*(xbf1{t+1}-xb{t+1})+ zfxbo6*zxbo{t+1}  + zfxbo7*lzxbo{t+1}+ zfxbo8*zxbof2{t+1}
+Equation 202: zxbs{t}    = zfxbs1*(xb{t}-xb{t-1})+ zfxbs2*(xb{t+1}-xb{t})+ zfxbs3*(xbf1{t+1}-xb{t+1})+ zfxbs6*zxbs{t+1}  + zfxbs7*lzxbs{t+1}+ zfxbs8*zxbsf2{t+1}
+Equation 203: zpib5{t}   = zfpib5a1*400*(pxbr{t} - pxbr{t-1} + dlpxp{t})+ zfpib5a6*zpib5{t+1}
+Equation 204: zpi5{t}  =   zfpi5a1*picnia{t} + zfpi5a6*zpi5{t+1}
+Equation 205: zpi10{t}  =  zfpi10a1*picnia{t}  + zfpi10a6*zpi10{t+1}
+Equation 206: zpic30{t} =  zfpic30a1*picnia{t} + zfpic30a6*zpic30{t+1}
+Equation 207: zlhp{t}   =  zflhpa1*(qlhp{t}-qlhp{t-1})+ zflhpa2*(qlhp{t+1}-qlhp{t})  + zflhpa6*zlhp{t+1} + zflhpa7*lzlhp{t+1}
+Equation 208: zyh{t}    =  (1-(zfyha1^0.25)*(zfyha2))*yh{t}+ (zfyha1^0.25)*zyh{t+1}
+Equation 209: zyhp{t}   =  (1-(zfyhpa1^0.25)*(zfyhpa2))*yhp{t}+ (zfyhpa1^0.25)*zyhp{t+1}
+Equation 210: zyht{t}   =  (1-(zfyhta1^0.25)*(zfyhta2))*yht{t}+ (zfyhta1^0.25)*zyht{t+1}
+Equation 211: zynid{t}  =  zfynida1*(qynidnr{t}-qynidnr{t-1}-(pxgr{t}-pxgr{t-1})) + zfynida2*(qynidnr{t+1}-qynidnr{t}-(pxgr{t+1}-pxgr{t}))+ zfynida6*zynid{t+1} + zfynida7*lzynid{t+1}
+Equation 212: zlurc{t}  =  zflurca1*(lur{t}-lurnat{t}) + zflurca6*zlurc{t+1}
+Equation 213: zlurl{t}  =  zflurla1*(lur{t}-lurnat{t}) + zflurla6*zlurl{t+1}
+Equation 214: zlurnc{t} =  zflurnca1*(lur{t}-lurnat{t})+ zflurnca6*zlurnc{t+1}
+Equation 215: zpc{t}   =   zfpca1*(qpcniar{t}-qpcniar{t-1}+dlpxp{t})+ zfpca6*zpc{t+1}
+Equation 216: zpl{t}    =  zfpla1*(qplr{t}-qplr{t-1}+dlpxp{t}) + zfpla6*zpl{t+1}
+Equation 217: zpnc{t}   =  zfpnca1*(qpxncr{t}-qpxncr{t-1}+dlpxp{t})+ zfpnca6*zpnc{t+1}
+Equation 218: zdivgr{t} =  zfdivgra1*400*(ynidnr{t} - pxgr{t} - (ynidnr{t-1} - pxgr{t-1}))+ zfdivgra6*zdivgr{t+1}
+Equation 219: zrff5{t}  =  zfrff5a1*rffe{t} + zfrff5a6*zrff5{t+1}
+Equation 220: zrff10{t}  =  zfrff10a1*rffe{t} + zfrff10a6*zrff10{t+1}
+Equation 221: zrff30{t}  =  zfrff30a1*rffe{t}  + zfrff30a6*zrff30{t+1}
+Equation 222: zgap05{t}  =  zfgap05a1*xgap{t} + zfgap05a6*zgap05{t+1}
+Equation 223: zgap10{t} =  zfgap10a1*xgap{t} + zfgap10a6*zgap10{t+1}
+Equation 224: zgap30{t} =  zfgap30a1*xgap{t} + zfgap30a6*zgap30{t+1}
+Equation 225: ecol1{t} = eco{t-1}
+Equation 226: ecdl1{t}   =ecd{t-1}
+Equation 227: echshl1{t}    = echsh{t-1}
+Equation 228: ehl1{t}    =eh{t-1}
+Equation 229: ehl2{t}   = ehl1{t-1}
+Equation 230: qehf1{t} = qeh{t+1}
+Equation 231: epdcl1{t}  =epdc{t-1}
+Equation 232: epdcl2{t}  =  epdcl1{t-1}
+Equation 233: epdol1{t}  =epdo{t-1}
+Equation 234: epdol2{t}  =  epdol1{t-1}
+Equation235:qepdol1{t}=qepdo{t-1}
+Equation236:epsl1{t}=eps{t-1}
+Equation237:epsl2{t}=epsl1{t-1}
+Equation238:qepsl1{t}=qeps{t-1}
+Equation239:kil1{t}=ki{t-1}
+Equation240:kil2{t}=kil1{t-1}
+Equation241:kil3{t}=kil2{t-1}
+Equation242:kil4{t}=kil3{t-1}
+Equation243:vpdcf1{t}=vpdc{t+1}
+Equation244:vpdof1{t}=vpdo{t+1}
+Equation245:vpsf1{t}=vps{t+1}
+Equation246:cengl1{t}=ceng{t-1}
+Equation247:cengl2{t}=cengl1{t-1}
+Equation248:rfyncl1{t}=rfynic{t-1}
+Equation249:rfynll1{t}=rfynil{t-1}
+Equation250:xbf1{t}=xb{t+1}
+Equation251:xbl1{t}=xb{t-1}
+Equation252:xgl1{t}=xg{t-1}
+Equation253:efsl1{t}=efs{t-1}
+Equation254:efsl2{t}=efsl1{t-1}
+Equation255:efsl3{t}=efsl2{t-1}
+Equation256:efsl4{t}=efsl3{t-1}
+Equation257:hmfptl1{t}=hmfpt{t-1}
+Equation258:hgxl1{t}=hgx{t-1}
+Equation259:xgdptl1{t}=xgdpt{t-1}
+Equation260:xgdptl2{t}=xgdptl1{t-1}
+Equation261:hggdpl1{t}=hggdpt{t-1}
+Equation262:hggdpl2{t}=hggdpl1{t-1}
+Equation263:xgap2l1{t}=xgap2{t-1}
+Equation264:lhpl1{t}=lhp{t-1}
+Equation265:qlhpl1{t}=qlhp{t-1}
+Equation266:lurl1{t}=lur{t-1}
+Equation267:leppol1{t}=leppot{t-1}
+Equation268:leppol2{t}=leppol1{t-1}
+Equation269:lurnal1{t}=lurnat{t-1}
+Equation270:wdnfcl1{t}=wdnfcnr{t-1}
+Equation271:wdnfcl2{t}=wdnfcl1{t-1}
+Equation272:xgdpnl1{t}=xgdpnr{t-1}
+Equation273:yhibnl1{t}=yhibnr{t-1}
+Equation274:ynidnl1{t}=ynidnr{t-1}
+Equation275:ynilnl1{t}=ynilnr{t-1}
+Equation276:yninrl1{t}=yninr{t-1}
+Equation277:picnil1{t}=picnia{t-1}
+Equation278:picnil2{t}=picnil1{t-1}
+Equation279:picnil3{t}=picnil2{t-1}
+Equation280:dpxncl1{t}=dpxnc{t-1}
+Equation281:dpxncl2{t}=dpxncl1{t-1}
+Equation282:dlpll1{t}=dlpl{t-1}
+Equation283:dlpll2{t}=dlpll1{t-1}
+Equation284:poilrl1{t}=poilr{t-1}
+Equation285:pcengl1{t}=pcengr{t-1}
+Equation286:pcerl1{t}=pcer{t-1}
+Equation287:pcfrl1{t}=pcfr{t-1}
+Equation288:pcfrl2{t}=pcfrl1{t-1}
+Equation289:pcfrl3{t}=pcfrl2{t-1}
+Equation290:ucesl1{t}=uces{t-1}
+Equation291:ucfsl1{t}=ucfs{t-1}
+Equation292:picxfl1{t}=picxfe{t-1}
+Equation293:picxfl2{t}=picxfl1{t-1}
+Equation294:picxfl3{t}=picxfl2{t-1}
+Equation295:pxbrl1{t}=pxbr{t-1}
+Equation296:dlpxpl1{t}=dlpxp{t-1}
+Equation297:dlpxpl2{t}=dlpxpl1{t-1}
+Equation298:dlpxpl3{t}=dlpxpl2{t-1}
+Equation299:egfil1{t}=egfi{t-1}
+Equation300:egfil2{t}=egfil1{t-1}
+Equation301:egfll1{t}=egfl{t-1}
+Equation302:egfll2{t}=egfll1{t-1}
+Equation303:egfol1{t}=egfo{t-1}
+Equation304:egfol2{t}=egfol1{t-1}
+Equation305:egsil1{t}=egsi{t-1}
+Equation306:egsil2{t}=egsil1{t-1}
+Equation307:egsll1{t}=egsl{t-1}
+Equation308:egsll2{t}=egsll1{t-1}
+Equation309:egsol1{t}=egso{t-1}
+Equation310:egsol2{t}=egsol1{t-1}
+Equation311:gfdbtl1{t}=gfdbtnr{t-1}
+Equation312:gsdbtl1{t}=gsdbtnr{t-1}
+Equation313:rgfinl1{t}=rgfint{t-1}
+Equation314:trfpl1{t}=trfp{t-1}
+Equation315:trfptl1{t}=trfpt{t-1}
+Equation316:trssil1{t}=trssi{t-1}
+Equation317:rtbel1{t}=rtbe{t-1}
+Equation318:rg5el1{t}=rg5e{t-1}
+Equation319:rmel1{t}=rme{t-1}
+Equation320:rmel2{t}=rmel1{t-1}
+Equation321:fxgapl1{t}=fxgap{t-1}
+Equation322:fgdpl1{t}=fgdp{t-1}
+Equation323:fgdpl2{t}=fgdpl1{t-1}
+Equation324:fgdpl3{t}=fgdpl2{t-1}
+Equation325:fgdpl4{t}=fgdpl3{t-1}
+Equation326:fgdpl5{t}=fgdpl4{t-1}
+Equation327:fpi10l1{t}=fpi10{t-1}
+Equation328:fpi10l2{t}=fpi10l1{t-1}
+Equation329:fpi10l3{t}=fpi10l2{t-1}
+Equation330:frl10l1{t}=frl10{t-1}
+Equation331:fpxrrl1{t}=fpxrr{t-1}
+Equation332:lzeco{t}=zeco{t+1}
+Equation333:lzecd{t}=zecd{t+1}
+Equation334:lzgapc2{t}=zgapc2{t+1}
+Equation335:lzeh{t}=zeh{t+1}
+Equation336:zehf2{t}=lzeh{t+1}
+Equation337:lzvpdc{t}=zvpdc{t+1}
+Equation338:zvpdcf2{t}=lzvpdc{t+1}
+Equation339:lzvpdo{t}=zvpdo{t+1}
+Equation340:zvpdof2{t}=lzvpdo{t+1}
+Equation341:lzvpol1{t}=lzvpdo{t-1}
+Equation342:lzvps{t}=zvps{t+1}
+Equation343:zvpsf2{t}=lzvps{t+1}
+Equation344:lzvpsl1{t}=lzvps{t-1}
+Equation345:lzxbc{t}=zxbc{t+1}
+Equation346:zxbcf2{t}=lzxbc{t+1}
+Equation347:lzxbo{t}=zxbo{t+1}
+Equation348:zxbof2{t}=lzxbo{t+1}
+Equation349:lzxbol1{t}=lzxbo{t-1}
+Equation350:lzxbs{t}=zxbs{t+1}
+Equation351:zxbsf2{t}=lzxbs{t+1}
+Equation352:lzxbsl1{t}=lzxbs{t-1}
+Equation353:lzpib5{t}=zpib5{t+1}
+Equation354:lzlhp{t}=zlhp{t+1}
+Equation355:lzynid{t}=zynid{t+1}
+Equation356:lzlurc{t}=zlurc{t+1}
+Equation357:lzlurl{t}=zlurl{t+1}
+Equation358:lzlurnc{t}=zlurnc{t+1}
+Equation359:lzpc{t}=zpc{t+1}
+Equation360:lzpl{t}=zpl{t+1}
+Equation361:lzpnc{t}=zpnc{t+1}
+Equation362:one{t}=0*one{t-1}
+Definition of change in policy rate: DeltaR{t} = rffe{t} - rffe{t-1}
+Definition of policy instrument: rInstr{t} = rffe{t}

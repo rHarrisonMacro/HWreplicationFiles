@@ -1,0 +1,187 @@
+METADATA
+Name:           SmetsWouters2007                                                                                                                                                                                                                                                                        
+Description:    Model from Smets, Frank, and Rafael Wouters. 2007. "Shocks and Frictions in US Business Cycles: A Bayesian DSGE Approach." American Economic Review, 97(3): 586-606.  Converted from dynare model code on AEA website (parameter values are posterior means reported in the paper).     
+Author:         Richard Harrison                                                                                                                                                                                                                                                                        
+
+MODEL VARIABLES
+MA disturbance to wage Phillips curve:  ewma    
+MA disturbance to Phillips curve:       epinfma 
+FP capacity utilization:                zcapf   
+FP return on capital:                   rkf     
+FP capital services:                    kf      
+FP price of capital:                    pkf     
+FP consumption:                         cf      
+FP investment:                          invef   
+FP output:                              yf      
+FP hours:                               labf    
+FP real wage:                           wf      
+FP real interest rate:                  rrf     
+Marginal cost:                          mc      
+Capital utilization rate:               zcap    
+Return on capital:                      rk      
+Capital services:                       k       
+Price of capital:                       pk      
+Consumption:                            c       
+Investment:                             inve    
+Output:                                 y       
+Hours worked:                           lab     
+Inflation:                              pinf    
+Real wage:                              w       
+Policy rate:                            r       
+Productivity forcing process:           a       
+Consumption preference forcing process: b       
+Government spending:                    g       
+Cost of capital forcing process:        qs      
+Monetary policy forcing process:        ms      
+Markup forcing process:                 spinf   
+Wage markup forcing process:            sw      
+FP capital stock:                       kpf     
+Capital stock:                          kp      
+GDP growth:                             dy      
+Consumption growth:                     dc      
+Investment growth:                      dinve   
+Nominal wage inflation:                 dw      
+Flex price output gap:                  ygap    
+
+SHOCKS
+Productivity shock:             ea      
+Consumption preference shock:   eb      
+Government spending shock:      eg      
+Capital price shock:            eqs     
+Monetary policy shock:          em      
+Markup shock:                   epinf   
+Wage markup shock:              ew      
+
+MODEL OBSERVABLES
+GDP growth:             dyobs:          dlngdp  
+Consumption growth:     dcobs:          dlnc    
+Investment growth:      dinveobs:       dlni    
+Hours worked:           labobs:         hours   
+Inflation:              pinfobs:        dlnpc   
+Wage inflation:         dwobs:          dlnw    
+Policy rate:            robs:           ffr     
+
+MEASUREMENT ERRORS
+
+RAW OBSERVABLES
+Quarterly real per capita GDP growth:           dlngdp  
+Quarterly real per capita consumption growth:   dlnc    
+Quarterly real per capita investment growth:    dlni    
+Hours worked per capita:                        hours   
+Quarterly consumption price inflation:          dlnpc   
+Quarterly nominal wage inflation:               dlnw    
+Fed funds rate:                                 ffr     
+
+TIME VARYING TRENDS
+
+PARAMETERS
+Std dev of productivity shock:                  sigmaea:        0.45                    
+Std dev of risk premium shock:                  sigmaeb:        0.23                    
+Std dev of govt spending shock:                 sigmaeg:        0.53                    
+Std dev of investment price shock:              sigmaeqs:       0.45                    
+Std dev of monetary policy shock:               sigmaem:        0.24                    
+Std dev of price markup shock:                  sigmaepinf:     0.14                    
+Std dev of wage markup shock:                   sigmaew:        0.24                    
+Hours measurement equation constant:            constelab:      0.53                    
+Depreciation rate:                              ctou:           0.025                   
+SS wage markup:                                 clandaw:        1.5                     
+SS share of govt spending:                      cg:             0.18                    
+Curvature of Kimball goods aggregator:          curvp:          10                      
+Curvature of Kimball labor aggregator:          curvw:          10                      
+Capital share in production:                    calfa:          0.19                    
+Quarterly steady state growth rate:             ctrend:         0.43                    
+Discount rate:                                  constebeta:     0.16                    
+Inverse elasticity of substitution:             csigma:         1.38                    
+Inflation target:                               constepinf:     0.78                    
+Production fixed cost:                          cfc:            1.6                     
+Government and productivity shock correlation:  cgy:            0.52                    
+Capital adjustment cost elasticity:             csadjcost:      5.74                    
+Consumption habits:                             chabb:          0.71                    
+Calvo probability for wages:                    cprobw:         0.7                     
+Labor supply elasticity:                        csigl:          1.83                    
+Calvo probability for prices:                   cprobp:         0.66                    
+Wage indexation parameter:                      cindw:          0.58                    
+Inflation indexation parameter:                 cindp:          0.24                    
+Elasticity of capital utilization:              czcap:          0.54                    
+Policy rule response to inflation:              crpi:           2.04                    
+Policy rule response to lagged rate:            crr:            0.81      
+Policy rule response to output gap:             cry:            0.08                    
+Policy rule response to change in output gap:   crdy:           0.22                    
+Persistence of producivity process:             crhoa:          0.95                    
+Persistence of risk premium process:            crhob:          0.22                    
+Persistence of government spending process:     crhog:          0.97                    
+Persistence of investment cost process:         crhoqs:         0.71                    
+Persistence of monetary policy process:         crhoms:         0.15                    
+Persistence of price markup process:            crhopinf:       0.89                    
+Persistence of wage markup process:             crhow:          0.96                    
+Price markup moving average parameter:          cmap:           0.69      
+Wage markup moving average parameter:           cmaw:           0.84                    
+
+MODEL EQUATIONS
+Marginal cost (FP):             0*(1-calfa)*a{t} + 1*a{t} =  calfa*rkf{t}+(1-calfa)*(wf{t})                                                                                                                                                                                                                                                                                                                                                                                                                                             
+Capital utilization  (FP):      zcapf{t} =  (1/(czcap/(1-czcap)))* rkf{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+Return on capital (FP):         rkf{t} =  (wf{t})+labf{t}-kf{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+Capital services (FP):          kf{t} =  kpf{t-1}+zcapf{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+Investment Euler eqn (FP):      csadjcost*invef{t} = (1/(1+cbetabar*cgamma))* (  csadjcost*invef{t-1} + csadjcost*cbetabar*cgamma*invef{t+1}+(1/(cgamma^2))*pkf{t} ) + csadjcost*qs{t}                                                                                                                                                                                                                                                                                                                                                  
+Capital price (FP):             pkf{t} = -rrf{t}-0*b{t}+(1/((1-chabb/cgamma)/(csigma*(1+chabb/cgamma))))*b{t} +(crk/(crk+(1-ctou)))*rkf{t+1} +  ((1-ctou)/(crk+(1-ctou)))*pkf{t+1}                                                                                                                                                                                                                                                                                                                                                      
+Consumption Euler eqn (FP):     cf{t} = (chabb/cgamma)/(1+chabb/cgamma)*cf{t-1} + (1/(1+chabb/cgamma))*cf{t+1} +((csigma-1)*cwhlc/(csigma*(1+chabb/cgamma)))*(labf{t}-labf{t+1}) - (1-chabb/cgamma)/(csigma*(1+chabb/cgamma))*(rrf{t}+0*b{t}) + b{t}                                                                                                                                                                                                                                                                                    
+Market clearing (FP):           yf{t} = ccy*cf{t}+ciy*invef{t}+g{t}  +  crkky*zcapf{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+Production function (FP):       yf{t} = cfc*( calfa*kf{t}+(1-calfa)*labf{t} +a{t} )                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+Labour supply (FP):             wf{t} = csigl*labf{t}+(1/(1-chabb/cgamma))*cf{t} - (chabb/cgamma)/(1-chabb/cgamma)*cf{t-1}                                                                                                                                                                                                                                                                                                                                                                                                              
+Capital accumulation (FP):      kpf{t} =  (1-cikbar)*kpf{t-1}+(cikbar)*invef{t} + (cikbar)*(cgamma^2*csadjcost)*qs{t}                                                                                                                                                                                                                                                                                                                                                                                                                   
+Marginal cost:                  mc{t} =  calfa*rk{t}+(1-calfa)*(w{t}) - 1*a{t} - 0*(1-calfa)*a{t}                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Capital utilization:            zcap{t} =  (1/(czcap/(1-czcap)))* rk{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+Return on capital:              rk{t} =  w{t}+lab{t}-k{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+Capital services:               k{t} =  kp{t-1}+zcap{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+Investment Euler equation:      csadjcost*inve{t} = (1/(1+cbetabar*cgamma))* (  csadjcost*inve{t-1} + csadjcost*cbetabar*cgamma*inve{t+1}+(1/(cgamma^2))*pk{t} ) + csadjcost*qs{t}                                                                                                                                                                                                                                                                                                                                                      
+Price of capital:               pk{t} = -r{t}+pinf{t+1}-0*b{t} +(1/((1-chabb/cgamma)/(csigma*(1+chabb/cgamma))))*b{t} + (crk/(crk+(1-ctou)))*rk{t+1} +  ((1-ctou)/(crk+(1-ctou)))*pk{t+1}                                                                                                                                                                                                                                                                                                                                               
+Consumption Euler equation:     c{t} = (chabb/cgamma)/(1+chabb/cgamma)*c{t-1} + (1/(1+chabb/cgamma))*c{t+1} +((csigma-1)*cwhlc/(csigma*(1+chabb/cgamma)))*(lab{t}-lab{t+1}) - (1-chabb/cgamma)/(csigma*(1+chabb/cgamma))*(r{t}-pinf{t+1} + 0*b{t}) +b{t}                                                                                                                                                                                                                                                                                
+Market clearing:                y{t} = ccy*c{t}+ciy*inve{t}+g{t}  +  1*crkky*zcap{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+Production function:            y{t} = cfc*( calfa*k{t}+(1-calfa)*lab{t} +a{t} )                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+Phillips curve:                 pinf{t} =  (1/(1+cbetabar*cgamma*cindp)) * ( cbetabar*cgamma*pinf{t+1} +cindp*pinf{t-1}                +((1-cprobp)*(1-cbetabar*cgamma*cprobp)/cprobp)/((cfc-1)*curvp+1)*(mc{t})  )  + spinf{t}                                                                                                                                                                                                                                                                                                         
+Wage Phillips curve:            w{t} =  (1/(1+cbetabar*cgamma))*w{t-1}                +(cbetabar*cgamma/(1+cbetabar*cgamma))*w{t+1} +(cindw/(1+cbetabar*cgamma))*pinf{t-1}                -(1+cbetabar*cgamma*cindw)/(1+cbetabar*cgamma)*pinf{t} +(cbetabar*cgamma)/(1+cbetabar*cgamma)*pinf{t+1}                +(1-cprobw)*(1-cbetabar*cgamma*cprobw)/((1+cbetabar*cgamma)*cprobw)*(1/((clandaw-1)*curvw+1))*               (csigl*lab{t} + (1/(1-chabb/cgamma))*c{t} - ((chabb/cgamma)/(1-chabb/cgamma))*c{t-1} -w{t})+ 1*sw{t}      
+Monetary policy rule:           r{t} =  crpi*(1-crr)*pinf{t} +cry*(1-crr)*(y{t}-yf{t}) +crdy*(y{t}-yf{t}-y{t-1}+yf{t-1})+crr*r{t-1} + ms{t}                                                                                                                                                                                                                                                                                                                                                                                             
+Productivity forcing process:   a{t} = crhoa*a{t-1}  + sigmaea*ea{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+Cons preference forcing process:b{t} = crhob*b{t-1} + sigmaeb*eb{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+Govt spending forcing process:  g{t} = crhog*(g{t-1}) + sigmaeg*eg{t} + cgy*sigmaea*ea{t}                                                                                                                                                                                                                                                                                                                                                                                                                                               
+Capital price forcing process:  qs{t} = crhoqs*qs{t-1} + sigmaeqs*eqs{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+Monetary policy forcing process:ms{t} = crhoms*ms{t-1} + sigmaem*em{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+Cost push forcing process:      spinf{t} = crhopinf*spinf{t-1} + epinfma{t} - cmap*epinfma{t-1}                                                                                                                                                                                                                                                                                                                                                                                                                                         
+Cost push shock:                epinfma{t}=sigmaepinf*epinf{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+Wage shock forcing process:     sw{t} = crhow*sw{t-1} + ewma{t} - cmaw*ewma{t-1}                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+Wage shock:                     ewma{t}=sigmaew*ew{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+Capital accumulation equation:  kp{t} =  (1-cikbar)*kp{t-1}+cikbar*inve{t} + cikbar*cgamma^2*csadjcost*qs{t}                                                                                                                                                                                                                                                                                                                                                                                                                            
+GDP growth:                     dy{t} = y{t}-y{t-1}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+Consumption growth:             dc{t} = c{t}-c{t-1}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+Investment growth:              dinve{t} = inve{t}-inve{t-1}                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+Nominal wage inflation:         dw{t} = w{t}-w{t-1}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+Flex price output gap:          ygap{t} = y{t} - yf{t}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+MEASUREMENT EQUATIONS
+GDP growth mment eqn:                   dyobs{t} = dy{t} +ctrend                
+Consumption growth mment eqn:           dcobs{t}=dc{t}+ctrend                   
+Investment growth mment eqn:            dinveobs{t}=dinve{t}+ctrend             
+Nominal wage inflation mment eqn:       dwobs{t}=dw{t}+ctrend                   
+Price inflation mment eqn:              pinfobs{t} = 1*(pinf{t}) + constepinf   
+Interest rate mment eqn:                robs{t} =    1*(r{t}) + conster         
+Hours worked mment eqn:                 labobs{t} = lab{t} + constelab          
+
+STEADY STATES & PARAMETER TRANSFORMATIONS
+Fixed cost level:               clandap:        cfc                                                                     
+Adjusted beta:                  cbetabar:       cbeta*cgamma^(-csigma)                                                  
+SS real rate:                   cr:             cpie/(cbeta*cgamma^(-csigma))                                           
+SS cost of K:                   crk:            (cbeta^(-1))*(cgamma^csigma) - (1-ctou)                                 
+SS wage rate:                   cw:             (calfa^calfa*(1-calfa)^(1-calfa)/(clandap*crk^calfa))^(1/(1-calfa))     
+SS depreciation rate:           cikbar:         (1-(1-ctou)/cgamma)                                                     
+SS capital share:               cik:            (1-(1-ctou)/cgamma)*cgamma                                              
+SS labor to capital ratio:      clk:            ((1-calfa)/calfa)*(crk/cw)                                              
+SS capital to output ratio:     cky:            cfc*(clk)^(calfa-1)                                                     
+SS investment to output ratio:  ciy:            cik*cky                                                                 
+SS consumption share:           ccy:            1-cg-cik*cky                                                            
+SS captial costs:               crkky:          crk*cky                                                                 
+SS wage to cons share:          cwhlc:          (1/clandaw)*(1-calfa)/calfa*crk*cky/ccy                                 
+SS growth rate:                 cgamma:         ctrend/100+1                                                            
+SS interest rate:               conster:        (cr-1)*100                                                              
+SS inflation rate:              cpie:           constepinf/100+1                                                        
+Discount factor:                cbeta:          1/(1+constebeta/100)                                                    
+

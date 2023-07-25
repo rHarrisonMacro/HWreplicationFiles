@@ -1,0 +1,21 @@
+METADATA
+Name: SW2007
+Description: Model from Smets, Frank, and Rafael Wouters. 2007. "Shocks and Frictions in US Business Cycles: A Bayesian DSGE Approach." American Economic Review, 97(3): 586-606.  Modified to remove investment adjustment costs and add hard "speed limit" constraints on investment.
+Author: Richard Harrison
+
+MODEL VARIABLES
+Add: Lagrange multiplier for upper speed limit on investment: 	xi
+Add: Lagrange multiplier for lower speed limit on investment: 	zeta
+Add: Investment change times minus 1:				negdinve
+
+PARAMETERS
+Remove:	csadjcost
+
+MODEL EQUATIONS
+ChangeEquation: Investment Euler eqn (FP): 0 = pkf{t}  
+ChangeEquation: Capital accumulation (FP): kpf{t} =  (1-cikbar)*kpf{t-1}+(cikbar)*invef{t}
+ChangeEquation: Capital accumulation equation: kp{t} =  (1-cikbar)*kp{t-1}+cikbar*inve{t} 
+ChangeEquation: Investment Euler equation: 0 = pk{t} - xi{t} + cbetabar*cgamma*xi{t+1} + zeta{t} -  cbetabar*cgamma*zeta{t+1}
+Add: Lagrange multiplier for upper speed limit on investment: xi{t} = 0
+Add: Lagrange multiplier for lower speed limit on investment: zeta{t} = 0
+Add: Investment change times minus 1: negdinve{t} = -dinve{t}
